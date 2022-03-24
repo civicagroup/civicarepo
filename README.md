@@ -28,11 +28,11 @@ Civica is an app that promotes civic engagement by providing the user access to 
 
 **Required Must-have Stories**
 
-* User can see list of their representatives when they input their address.
-* User can click on a representative's name to see more about them.
+* User can see list of their representatives when they input their address
+* User can click on a representative's name to see more about them
 * User can see if there are any news about a representative 
 * user can see local municipal news if no news about representative is available
-* User can see representative's latest tweets (if their account is verified).
+* User can see representative's latest tweets (if their account is verified)
 
 
 **Optional Nice-to-have Stories**
@@ -42,16 +42,28 @@ Civica is an app that promotes civic engagement by providing the user access to 
 * Event organizers/users create an account with our app
 * Event organizers can create local events
 * Local events get displayed to users based on their address/city/zipcode
-* Users can favorite userful info
+* Users can favorite useful info
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Login
+   * User logs in to twitter through the app
+* Registration
+   * Event organizers/users create an account with our app
+* Stream
+   * User can see list of their representatives when they input their address
+   * User can see if there are any news about a representative
+   * User can see local municipal news if no news about representative is available
+   * User can see representative's latest tweets (if their account is verified)
+   * Local events get displayed to users based on their address/city/zipcode
+* Detail
+   * User can reply to a tweet
+   * User can retweet
+   * Users can favorite useful info
+* Creation
+   * Event organizers can create local events
+* Profile
+   * User can click on a representative's name to see more about them
 
 ### 3. Navigation
 
