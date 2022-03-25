@@ -15,12 +15,12 @@ Civica is an app that promotes civic engagement by providing the user access to 
 
 ### App Evaluation
 
-- **Category:** Electoral Engagement
+- **Category:** Civic Engagement
 - **Mobile:** App would be mobile first (iOS), but could be expanded to desktop.
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Story:** Connects citizens with their local representatives, raise awareness of community development, invite users to be participants of local volunteering events. An app that the folks at Pawness in Parks & Rec would use.
+- **Market:** There is a market gap in apps for civic engagement. Average citizens who would like to be more informed or engaged with their local governments and civic organizations would find this app userful. 
+- **Habit:** By offering pertinent news stories and personal tweets, this app provides users a personal touch of civic engagement that government websites cannot rival.
+- **Scope:** First this app serves as an information aggregator. Gradually, we would like to see community leaders use this app to communicate civic events with the users. 
 
 ## Product Spec
 
@@ -69,18 +69,24 @@ Civica is an app that promotes civic engagement by providing the user access to 
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Local news
+* Local representatives
+* My Profile
 
 **Flow Navigation** (Screen to Screen)
-
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Welcome screen
+    * Require user address
+    * Optional login to Civica
+* Local news
+   * Tap on a news cell to modally open a new screen with the story from the source site
+* Local representatives
+   * Tap on a representative's name to open a new screen with their contact info, latest news, and/or tweets
+       * Retweet or reply to a tweet
+* My profile
+    * Login to Twitter screen
+    * Login to Civica screen
+    * Input my address
+    * Open My Saved Stories
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
