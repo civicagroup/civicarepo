@@ -1,4 +1,4 @@
-Group 20 App Design Project - README 
+Group 20/ (New Group 17) App Design Project - README 
 ===
 
 # CIVICA APP
