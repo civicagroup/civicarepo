@@ -102,13 +102,14 @@ Civica is an app that promotes civic engagement by providing the user access to 
 [Add table of models]
 ### Networking
 **List of network requests by screen**
+
   - Landing page & list of reps: 
-    (Read/GET) representatives based on address input
+      - (Read/GET) representatives based on address input
   - single rep view:
-    (Read/GET) contact info 
-    (Read/GET) rep's twitter profile
-    (Read/GET) news about rep
-    (Create/POST) respond to a tweet
+      - (Read/GET) contact info 
+      - (Read/GET) rep's twitter profile
+      - (Read/GET) news about rep
+      - (Create/POST) respond to a tweet
     
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
