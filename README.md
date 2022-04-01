@@ -46,8 +46,8 @@ Civica is an app that promotes civic engagement by providing the user access to 
 
 ### 2. Screen Archetypes
 
-* Login
-   * User logs in to twitter through the app
+* Landing page
+   * User inputs address
 * Registration
    * Event organizers/users create an account with our app
 * Stream
@@ -101,6 +101,14 @@ Civica is an app that promotes civic engagement by providing the user access to 
 ### Models
 [Add table of models]
 ### Networking
-- [Add list of network requests by screen ]
+**List of network requests by screen**
+  - Landing page & list of reps: 
+    (Read/GET) representatives based on address input
+  - single rep view:
+    (Read/GET) contact info 
+    (Read/GET) rep's twitter profile
+    (Read/GET) news about rep
+    (Create/POST) respond to a tweet
+    
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
