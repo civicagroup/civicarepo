@@ -99,6 +99,39 @@ Civica is an app that promotes civic engagement by providing the user access to 
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
+#### User
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId      | String   | unique id for the user (default field) |
+   | emaileVerified | Boolean | determine whether email was verified | 
+   | username        | String | username user uses to log in with |
+   | password         | String     | password user uses to log in with |
+   | email       | String   | image caption by author |
+   | createdAt | DateTime | date when post is created (default field) | 
+   | updatedAt | DateTime | date when post is last updated (default field) |
+   
+#### Comments
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId | String | unique id for the comments (default field) | 
+   | createdAt | DateTime | date when comment is created (default field) | 
+   | updatedAt | DateTime | date when comment is last updated (default field) |
+   | event | Pointer to Events | event associatted with comment | 
+   | author | Pointer to User | user who posted comment | 
+
+#### Events
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId | String | unique id for the event (default field) | 
+   | organizer | Pointer to User | Event organizer | 
+   | description | String | event description |
+   | createdAt | DateTime | date when post is created (default field) | 
+   | updatedAt | DateTime | date when post is last updated (default field) |
+   | attendees | Array[Pointer to User] | List of attendees | 
+   | image | File | image of event post |
+   | comments | Array[Pointer to Comments] | List of comments |
+### Models
 [Add table of models]
 ### Networking
 **List of network requests by screen**
@@ -112,4 +145,21 @@ Civica is an app that promotes civic engagement by providing the user access to 
       - (Create/POST) respond to a tweet
     
 - [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+- 
+#### [OPTIONAL:] Existing API Endpoints
+##### Google Civic Info API
+- Base URL - [https://www.googleapis.com/civicinfo/v2/](https://www.googleapis.com/civicinfo/v2/representatives)
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /representatives/?address=address | get all representatives for a specific address |
+    `GET` | /representatives/?levels=levels | get all representatives for a specific level |
+    `GET` | /representatives/?role=role | get all representatives for a specific role |
+    
+##### NYTimes API
+- Base URL - [http://api.nytimes.com/svc/semantic/v2/concept](http://api.nytimes.com/svc/semantic/v2/concept)
+
+   HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /name/nytd_per/<person>.json | get all news for a specific person |
+
