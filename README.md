@@ -90,7 +90,7 @@ Civica is an app that promotes civic engagement by providing the user access to 
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://i.imgur.com/ApDYqBG.png" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
