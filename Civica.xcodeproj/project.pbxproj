@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D95549D527F7AECC005F12EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95549D427F7AECC005F12EB /* AppDelegate.swift */; };
+		D95549D727F7AECC005F12EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95549D627F7AECC005F12EB /* SceneDelegate.swift */; };
+		D95549D927F7AECC005F12EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95549D827F7AECC005F12EB /* ViewController.swift */; };
+		D95549DC27F7AECC005F12EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95549DA27F7AECC005F12EB /* Main.storyboard */; };
+		D95549DE27F7AECF005F12EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95549DD27F7AECF005F12EB /* Assets.xcassets */; };
+		D95549E127F7AECF005F12EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95549DF27F7AECF005F12EB /* LaunchScreen.storyboard */; };
+		D95549EC27F7AECF005F12EB /* CivicaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95549EB27F7AECF005F12EB /* CivicaTests.swift */; };
+		D95549F627F7AECF005F12EB /* CivicaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95549F527F7AECF005F12EB /* CivicaUITests.swift */; };
+		D95549F827F7AECF005F12EB /* CivicaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95549F727F7AECF005F12EB /* CivicaUITestsLaunchTests.swift */; };
+		D9554A0527F7C143005F12EB /* RepresentativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9554A0427F7C143005F12EB /* RepresentativeViewController.swift */; };
+		D9554A0727F7C192005F12EB /* RepInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9554A0627F7C192005F12EB /* RepInfoTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D95549E827F7AECF005F12EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D95549C927F7AECC005F12EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D95549D027F7AECC005F12EB;
+			remoteInfo = Civica;
+		};
+		D95549F227F7AECF005F12EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D95549C927F7AECC005F12EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D95549D027F7AECC005F12EB;
+			remoteInfo = Civica;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D95549D127F7AECC005F12EB /* Civica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Civica.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D95549D427F7AECC005F12EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D95549D627F7AECC005F12EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D95549D827F7AECC005F12EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D95549DB27F7AECC005F12EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D95549DD27F7AECF005F12EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D95549E027F7AECF005F12EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D95549E227F7AECF005F12EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D95549E727F7AECF005F12EB /* CivicaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CivicaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D95549EB27F7AECF005F12EB /* CivicaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicaTests.swift; sourceTree = "<group>"; };
+		D95549F127F7AECF005F12EB /* CivicaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CivicaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D95549F527F7AECF005F12EB /* CivicaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicaUITests.swift; sourceTree = "<group>"; };
+		D95549F727F7AECF005F12EB /* CivicaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D9554A0427F7C143005F12EB /* RepresentativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeViewController.swift; sourceTree = "<group>"; };
+		D9554A0627F7C192005F12EB /* RepInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepInfoTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D95549CE27F7AECC005F12EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D95549E427F7AECF005F12EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D95549EE27F7AECF005F12EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D95549C827F7AECC005F12EB = {
+			isa = PBXGroup;
+			children = (
+				D95549D327F7AECC005F12EB /* Civica */,
+				D95549EA27F7AECF005F12EB /* CivicaTests */,
+				D95549F427F7AECF005F12EB /* CivicaUITests */,
+				D95549D227F7AECC005F12EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D95549D227F7AECC005F12EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D95549D127F7AECC005F12EB /* Civica.app */,
+				D95549E727F7AECF005F12EB /* CivicaTests.xctest */,
+				D95549F127F7AECF005F12EB /* CivicaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D95549D327F7AECC005F12EB /* Civica */ = {
+			isa = PBXGroup;
+			children = (
+				D95549D427F7AECC005F12EB /* AppDelegate.swift */,
+				D95549D627F7AECC005F12EB /* SceneDelegate.swift */,
+				D95549D827F7AECC005F12EB /* ViewController.swift */,
+				D95549DA27F7AECC005F12EB /* Main.storyboard */,
+				D95549DD27F7AECF005F12EB /* Assets.xcassets */,
+				D95549DF27F7AECF005F12EB /* LaunchScreen.storyboard */,
+				D95549E227F7AECF005F12EB /* Info.plist */,
+				D9554A0427F7C143005F12EB /* RepresentativeViewController.swift */,
+				D9554A0627F7C192005F12EB /* RepInfoTableViewCell.swift */,
+			);
+			path = Civica;
+			sourceTree = "<group>";
+		};
+		D95549EA27F7AECF005F12EB /* CivicaTests */ = {
+			isa = PBXGroup;
+			children = (
+				D95549EB27F7AECF005F12EB /* CivicaTests.swift */,
+			);
+			path = CivicaTests;
+			sourceTree = "<group>";
+		};
+		D95549F427F7AECF005F12EB /* CivicaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D95549F527F7AECF005F12EB /* CivicaUITests.swift */,
+				D95549F727F7AECF005F12EB /* CivicaUITestsLaunchTests.swift */,
+			);
+			path = CivicaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D95549D027F7AECC005F12EB /* Civica */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D95549FB27F7AECF005F12EB /* Build configuration list for PBXNativeTarget "Civica" */;
+			buildPhases = (
+				D95549CD27F7AECC005F12EB /* Sources */,
+				D95549CE27F7AECC005F12EB /* Frameworks */,
+				D95549CF27F7AECC005F12EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Civica;
+			productName = Civica;
+			productReference = D95549D127F7AECC005F12EB /* Civica.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D95549E627F7AECF005F12EB /* CivicaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D95549FE27F7AECF005F12EB /* Build configuration list for PBXNativeTarget "CivicaTests" */;
+			buildPhases = (
+				D95549E327F7AECF005F12EB /* Sources */,
+				D95549E427F7AECF005F12EB /* Frameworks */,
+				D95549E527F7AECF005F12EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D95549E927F7AECF005F12EB /* PBXTargetDependency */,
+			);
+			name = CivicaTests;
+			productName = CivicaTests;
+			productReference = D95549E727F7AECF005F12EB /* CivicaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D95549F027F7AECF005F12EB /* CivicaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9554A0127F7AECF005F12EB /* Build configuration list for PBXNativeTarget "CivicaUITests" */;
+			buildPhases = (
+				D95549ED27F7AECF005F12EB /* Sources */,
+				D95549EE27F7AECF005F12EB /* Frameworks */,
+				D95549EF27F7AECF005F12EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D95549F327F7AECF005F12EB /* PBXTargetDependency */,
+			);
+			name = CivicaUITests;
+			productName = CivicaUITests;
+			productReference = D95549F127F7AECF005F12EB /* CivicaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D95549C927F7AECC005F12EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					D95549D027F7AECC005F12EB = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					D95549E627F7AECF005F12EB = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = D95549D027F7AECC005F12EB;
+					};
+					D95549F027F7AECF005F12EB = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = D95549D027F7AECC005F12EB;
+					};
+				};
+			};
+			buildConfigurationList = D95549CC27F7AECC005F12EB /* Build configuration list for PBXProject "Civica" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D95549C827F7AECC005F12EB;
+			productRefGroup = D95549D227F7AECC005F12EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D95549D027F7AECC005F12EB /* Civica */,
+				D95549E627F7AECF005F12EB /* CivicaTests */,
+				D95549F027F7AECF005F12EB /* CivicaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D95549CF27F7AECC005F12EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D95549E127F7AECF005F12EB /* LaunchScreen.storyboard in Resources */,
+				D95549DE27F7AECF005F12EB /* Assets.xcassets in Resources */,
+				D95549DC27F7AECC005F12EB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D95549E527F7AECF005F12EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D95549EF27F7AECF005F12EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D95549CD27F7AECC005F12EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D95549D927F7AECC005F12EB /* ViewController.swift in Sources */,
+				D9554A0527F7C143005F12EB /* RepresentativeViewController.swift in Sources */,
+				D95549D527F7AECC005F12EB /* AppDelegate.swift in Sources */,
+				D95549D727F7AECC005F12EB /* SceneDelegate.swift in Sources */,
+				D9554A0727F7C192005F12EB /* RepInfoTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D95549E327F7AECF005F12EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D95549EC27F7AECF005F12EB /* CivicaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D95549ED27F7AECF005F12EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D95549F627F7AECF005F12EB /* CivicaUITests.swift in Sources */,
+				D95549F827F7AECF005F12EB /* CivicaUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D95549E927F7AECF005F12EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D95549D027F7AECC005F12EB /* Civica */;
+			targetProxy = D95549E827F7AECF005F12EB /* PBXContainerItemProxy */;
+		};
+		D95549F327F7AECF005F12EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D95549D027F7AECC005F12EB /* Civica */;
+			targetProxy = D95549F227F7AECF005F12EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D95549DA27F7AECC005F12EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D95549DB27F7AECC005F12EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D95549DF27F7AECF005F12EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D95549E027F7AECF005F12EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D95549F927F7AECF005F12EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D95549FA27F7AECF005F12EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D95549FC27F7AECF005F12EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8XC6RWKQJP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Civica/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oustella.Civica;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D95549FD27F7AECF005F12EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8XC6RWKQJP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Civica/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oustella.Civica;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D95549FF27F7AECF005F12EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8XC6RWKQJP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oustella.CivicaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Civica.app/Civica";
+			};
+			name = Debug;
+		};
+		D9554A0027F7AECF005F12EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8XC6RWKQJP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oustella.CivicaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Civica.app/Civica";
+			};
+			name = Release;
+		};
+		D9554A0227F7AECF005F12EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8XC6RWKQJP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oustella.CivicaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Civica;
+			};
+			name = Debug;
+		};
+		D9554A0327F7AECF005F12EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8XC6RWKQJP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oustella.CivicaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Civica;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D95549CC27F7AECC005F12EB /* Build configuration list for PBXProject "Civica" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D95549F927F7AECF005F12EB /* Debug */,
+				D95549FA27F7AECF005F12EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D95549FB27F7AECF005F12EB /* Build configuration list for PBXNativeTarget "Civica" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D95549FC27F7AECF005F12EB /* Debug */,
+				D95549FD27F7AECF005F12EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D95549FE27F7AECF005F12EB /* Build configuration list for PBXNativeTarget "CivicaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D95549FF27F7AECF005F12EB /* Debug */,
+				D9554A0027F7AECF005F12EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9554A0127F7AECF005F12EB /* Build configuration list for PBXNativeTarget "CivicaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9554A0227F7AECF005F12EB /* Debug */,
+				D9554A0327F7AECF005F12EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D95549C927F7AECC005F12EB /* Project object */;
+}
