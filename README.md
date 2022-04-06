@@ -156,10 +156,21 @@ Civica is an app that promotes civic engagement by providing the user access to 
     `GET` | /representatives/?levels=levels | get all representatives for a specific level |
     `GET` | /representatives/?role=role | get all representatives for a specific role |
     
-##### NYTimes API
-- Base URL - [http://api.nytimes.com/svc/semantic/v2/concept](http://api.nytimes.com/svc/semantic/v2/concept)
+##### Google News API
+- Base URL - [https://newsapi.org/s/google-news-api](https://newsapi.org/s/google-news-api)
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
-    `GET`    | /name/nytd_per/<person>.json | get all news for a specific person |
+    `GET`    | /v2/top-headlines | Get the top  news headline |
+    
+#### Twitter API 
+- Base URL - [https://api.twitter.com](https://api.twitter.com)
+
+    HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /1.1/statuses/user_timeline.json | Get information on the specifed user |
+    `POST`    | /1.1/favorites/create.json | Favorites (likes) the Tweet specified in the ID parameter  |
+    `POST`    | /1.1/favorites/destroy.json | Unfavorites (un-likes) the Tweet specified in the ID parameter |
+    `POST`    | /1.1/statuses/retweet/:id.json | Retweets a tweet |
+    `POST`    | /1.1/statuses/unretweet/:id.json | Untweets a retweeted status |
 
