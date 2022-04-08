@@ -169,7 +169,6 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nYT-yX-WDb">
                                                     <rect key="frame" x="278" y="8" width="128" height="229"/>
-                                                    <color key="backgroundColor" name="AccentColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="229" id="eNP-ww-n8G"/>
                                                         <constraint firstAttribute="width" constant="128" id="zbx-6B-nhr"/>
