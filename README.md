@@ -34,15 +34,6 @@ Civica is an app that promotes civic engagement by providing the user access to 
 - [x] user can see local municipal news if no news about representative is available
 - [x] User can see representative's latest tweets (if their account is verified)
 
-## Video Walkthrough
-
-Here's a walkthrough of implemented user stories:
-
-<img src='https://github.com/civicagroup/civicarepo/blob/osl/demo3.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-
-<img src='https://github.com/civicagroup/civicarepo/blob/get_local_news/localNews.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
-
-
 **Optional Nice-to-have Stories**
 - [ ] User logs in to twitter through the app
 - [ ] User can reply to a tweet
@@ -51,6 +42,15 @@ Here's a walkthrough of implemented user stories:
 - [ ] Event organizers can create local events
 - [ ] Local events get displayed to users based on their address/city/zipcode
 - [ ] Users can favorite useful info
+
+### Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='https://github.com/civicagroup/civicarepo/blob/get_local_news/localNews.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src='https://github.com/civicagroup/civicarepo/blob/osl/demo3.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
 
 ### 2. Screen Archetypes
 
