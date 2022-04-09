@@ -36,8 +36,8 @@ Civica is an app that promotes civic engagement by providing the user access to 
 
 ## Video Walkthrough
 Here's a walkthrough of implemented user stories:
-
-<img src='./localNews.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='https://github.com/civicagroup/civicarepo/blob/osl/demo3.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='https://github.com/civicagroup/civicarepo/blob/get_local_news/localNews.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 
 **Optional Nice-to-have Stories**
