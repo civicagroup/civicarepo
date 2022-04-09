@@ -8,6 +8,7 @@ Group 17 App Design Project - README
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
 2. [Schema](#Schema)
+3. [Video Walkthrough](#Video-Walkthrough)
 
 ## Overview
 ### Description
@@ -184,3 +185,7 @@ Here's a walkthrough of implemented user stories:
     `POST`    | /1.1/statuses/retweet/:id.json | Retweets a tweet |
     `POST`    | /1.1/statuses/unretweet/:id.json | Untweets a retweeted status |
 
+## Video Walkthrough
+Here's a walkthrough of implemented user stories:
+
+<img src='./localNews.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
