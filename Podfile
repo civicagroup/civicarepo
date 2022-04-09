@@ -7,6 +7,7 @@ target 'Civica' do
 
   # Pods for Civica
   pod 'AlamofireImage'
+  pod 'BDBOAuth1Manager'
 
   target 'CivicaTests' do
     inherit! :search_paths
