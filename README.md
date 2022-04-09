@@ -26,7 +26,7 @@ Civica is an app that promotes civic engagement by providing the user access to 
 
 ### 1. User Stories (Required and Optional)
 
-Project board can be located [here](https://github.com/orgs/civicagroup/projects/1).
+The **Project Board** can be located [here](https://github.com/orgs/civicagroup/projects/1).
 
 **Required Must-have Stories**
 
