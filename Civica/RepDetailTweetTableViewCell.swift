@@ -9,6 +9,8 @@ import UIKit
 
 class RepDetailTweetTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var tweetContent: UILabel!
+    @IBOutlet weak var tweetDate: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

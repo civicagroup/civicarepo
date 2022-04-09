@@ -9,8 +9,10 @@ import UIKit
 
 class RepDetailNewsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var newsSource: UILabel!
     @IBOutlet weak var newsLabel: UILabel!
-    
+    @IBOutlet weak var newsImage: UIImageView!
+    @IBOutlet weak var newsDate: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
