@@ -29,11 +29,12 @@ Civica is an app that promotes civic engagement by providing the user access to 
 **Required Must-have Stories**
 
 - [ ] User can see list of their representatives when they input their address
-- [ ] User can click on a representative's name to see more about them
-- [ ] User can see if there are any news about a representative 
+- [x] User can click on a representative's name to see more about them
+- [x] User can see if there are any news about a representative 
 - [x] user can see local municipal news if no news about representative is available
-- [ ] User can see representative's latest tweets (if their account is verified)
+- [x] User can see representative's latest tweets (if their account is verified)
 
+<img src="https://i.imgur.com/ApDYqBG.png" width=600>
 
 **Optional Nice-to-have Stories**
 - [ ] User logs in to twitter through the app
