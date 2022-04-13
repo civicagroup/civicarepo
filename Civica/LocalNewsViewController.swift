@@ -6,6 +6,7 @@
 //
 import UIKit
 import AlamofireImage
+import SafariServices
 
 class LocalNewsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -92,6 +93,26 @@ class LocalNewsViewController: UIViewController, UITableViewDataSource, UITableV
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentNews = news[indexPath.row]
+        let url = currentNews["link"] as! String ?? ""
+        if url == "" {
+            return
+        }
+        showNews(url: url)
+        newsTableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func showNews(url: String) {
+        if let url = URL(string: "\(url)") {
+                let config = SFSafariViewController.Configuration()
+                config.entersReaderIfAvailable = false
+
+                let vc = SFSafariViewController(url: url, configuration: config)
+                present(vc, animated: true)
+            }
     }
 
     /*
