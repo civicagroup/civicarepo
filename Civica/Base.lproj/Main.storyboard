@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -47,6 +47,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="See My Representatives"/>
                                 <connections>
+                                    <action selector="repsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9bq-IS-9fG"/>
                                     <segue destination="T1G-QR-uUj" kind="show" id="ngn-Za-cyg"/>
                                 </connections>
                             </button>
@@ -76,6 +77,10 @@
                             <constraint firstItem="reU-Yl-95E" firstAttribute="trailing" secondItem="dHG-lw-KtW" secondAttribute="trailing" id="uUr-60-V3u"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressField" destination="dHG-lw-KtW" id="mWh-jl-y9V"/>
+                        <outlet property="govLevelField" destination="reU-Yl-95E" id="H7P-ys-iAk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -328,7 +333,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jv-x5-rvB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="-745"/>
+            <point key="canvasLocation" x="1252" y="-774"/>
         </scene>
         <!--RepDetailViewController-->
         <scene sceneID="Pnt-QO-4BV">
