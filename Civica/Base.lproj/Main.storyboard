@@ -300,7 +300,7 @@
         <!--RepresentativeViewController.swift-->
         <scene sceneID="S1F-s3-tQT">
             <objects>
-                <tableViewController title="RepresentativeViewController.swift" id="ZJW-Lh-Sfc" customClass="RepresentativeViewController.swift" sceneMemberID="viewController">
+                <tableViewController title="RepresentativeViewController.swift" id="ZJW-Lh-Sfc" customClass="RepresentativeViewController.swift" customModule="Civica" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="rsF-dg-EK2">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
