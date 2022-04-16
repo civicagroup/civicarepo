@@ -6,15 +6,49 @@
 //
 
 import UIKit
+import Parse
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var usernameField: UITextField!
+    
+    @IBAction func onLogin(_ sender: Any) {
+        PFUser.logInWithUsername(inBackground: usernameField.text!, password: passwordField.text!) { (user: PFUser?, error: Error?) in
+            if user != nil {
+//                self.displayAlert(withTitle: "Login Successful", message: "")
+//                self.dismiss(animated: true)
+                self.performSegue(withIdentifier: "LoginSegue", sender: self)
+            } else {
+                self.displayAlert(withTitle: "Error", message: error!.localizedDescription)
+            }
+        }
+    }
+    
+    @IBAction func onSignup(_ sender: Any) {
+        let user = PFUser()
+        user.username = usernameField.text!
+        user.password = passwordField.text!
+        user.signUpInBackground {(succeeded: Bool, error: Error?) -> Void in
+            if let error = error {
+                self.displayAlert(withTitle: "Error", message: error.localizedDescription)
+            } else {
+                self.displayAlert(withTitle: "Success", message: "Account has been successfully created.")
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    func displayAlert(withTitle title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Okay", style: .default)
+        alert.addAction(okAction)
+        self.present(alert, animated: true)
+    }
 
     /*
     // MARK: - Navigation
