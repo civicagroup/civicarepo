@@ -6,14 +6,15 @@
 //
 
 import UIKit
-
+import AlamofireImage
 
 class RepresentativeViewController: UIViewController {
+   
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        print("we linked code to reps view!")
         // Do any additional setup after loading the view.
     }
     
