@@ -10,6 +10,8 @@
 		1F49826080F3CF94231CEB1D /* Pods_Civica_CivicaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC6A52D6C21EBA4CAEB7B1E /* Pods_Civica_CivicaUITests.framework */; };
 		6AE273463EA95C147607C442 /* Pods_CivicaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086F762B44F20047073C46C7 /* Pods_CivicaTests.framework */; };
 		AF661B51A845ED8469B8200C /* Pods_Civica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6536B4A18ABBF0CCD19877 /* Pods_Civica.framework */; };
+		D58D23C527FDC7B30059CB69 /* LocalNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D23C427FDC7B30059CB69 /* LocalNewsViewController.swift */; };
+		D58D23C727FDCF620059CB69 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D23C627FDCF620059CB69 /* NewsTableViewCell.swift */; };
 		D9283E782800E83A005FBE47 /* TwitterAPICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9283E772800E83A005FBE47 /* TwitterAPICaller.swift */; };
 		D933D3BE27F93504000AF78B /* RepDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D933D3BD27F93504000AF78B /* RepDetailViewController.swift */; };
 		D933D3C027F93F21000AF78B /* RepDetailNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D933D3BF27F93F21000AF78B /* RepDetailNewsTableViewCell.swift */; };
@@ -54,6 +56,8 @@
 		74AA5AEE63134E3086921872 /* Pods-Civica-CivicaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Civica-CivicaUITests.release.xcconfig"; path = "Target Support Files/Pods-Civica-CivicaUITests/Pods-Civica-CivicaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7EA6CE65DAF6EB91679FE7EC /* Pods-CivicaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CivicaTests.release.xcconfig"; path = "Target Support Files/Pods-CivicaTests/Pods-CivicaTests.release.xcconfig"; sourceTree = "<group>"; };
 		BC21134F4356DD4FD7CE86E7 /* Pods-Civica.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Civica.debug.xcconfig"; path = "Target Support Files/Pods-Civica/Pods-Civica.debug.xcconfig"; sourceTree = "<group>"; };
+		D58D23C427FDC7B30059CB69 /* LocalNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNewsViewController.swift; sourceTree = "<group>"; };
+		D58D23C627FDCF620059CB69 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		D9283E772800E83A005FBE47 /* TwitterAPICaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAPICaller.swift; sourceTree = "<group>"; };
 		D933D3BD27F93504000AF78B /* RepDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepDetailViewController.swift; sourceTree = "<group>"; };
 		D933D3BF27F93F21000AF78B /* RepDetailNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepDetailNewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				D95549E227F7AECF005F12EB /* Info.plist */,
 				D9554A0427F7C143005F12EB /* RepresentativeViewController.swift */,
 				D9554A0627F7C192005F12EB /* RepInfoTableViewCell.swift */,
+				D58D23C427FDC7B30059CB69 /* LocalNewsViewController.swift */,
+				D58D23C627FDCF620059CB69 /* NewsTableViewCell.swift */,
 				D933D3BD27F93504000AF78B /* RepDetailViewController.swift */,
 				D933D3BF27F93F21000AF78B /* RepDetailNewsTableViewCell.swift */,
 				D9C9980A27FE38A70035894A /* RepDetailTweetTableViewCell.swift */,
@@ -436,10 +442,12 @@
 				D933D3C027F93F21000AF78B /* RepDetailNewsTableViewCell.swift in Sources */,
 				D9C4DC222807C0C100B72275 /* myKey.swift in Sources */,
 				D95549D927F7AECC005F12EB /* ViewController.swift in Sources */,
+				D58D23C727FDCF620059CB69 /* NewsTableViewCell.swift in Sources */,
 				D9554A0527F7C143005F12EB /* RepresentativeViewController.swift in Sources */,
 				D95549D527F7AECC005F12EB /* AppDelegate.swift in Sources */,
 				D95549D727F7AECC005F12EB /* SceneDelegate.swift in Sources */,
 				D9554A0727F7C192005F12EB /* RepInfoTableViewCell.swift in Sources */,
+				D58D23C527FDC7B30059CB69 /* LocalNewsViewController.swift in Sources */,
 				D9C9980B27FE38A70035894A /* RepDetailTweetTableViewCell.swift in Sources */,
 				D933D3BE27F93504000AF78B /* RepDetailViewController.swift in Sources */,
 				D9283E782800E83A005FBE47 /* TwitterAPICaller.swift in Sources */,
@@ -630,6 +638,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -659,6 +668,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

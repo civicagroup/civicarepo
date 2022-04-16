@@ -8,6 +8,7 @@ Group 17 App Design Project - README
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
 2. [Schema](#Schema)
+3. [Video Walkthrough](#Video-Walkthrough)
 
 ## Overview
 ### Description
@@ -26,23 +27,36 @@ Civica is an app that promotes civic engagement by providing the user access to 
 
 ### 1. User Stories (Required and Optional)
 
+The **Project Board** can be located [here](https://github.com/orgs/civicagroup/projects/1).
+
 **Required Must-have Stories**
 
-* User can see list of their representatives when they input their address
-* User can click on a representative's name to see more about them
-* User can see if there are any news about a representative 
-* user can see local municipal news if no news about representative is available
-* User can see representative's latest tweets (if their account is verified)
-
+- [ ] User can see list of their representatives when they input their address
+- [x] User can click on a representative's name to see more about them
+- [x] User can see if there are any news about a representative 
+- [x] user can see local municipal news if no news about representative is available
+- [x] User can see representative's latest tweets (if their account is verified)
 
 **Optional Nice-to-have Stories**
-* User logs in to twitter through the app
-* User can reply to a tweet
-* User can retweet
-* Event organizers/users create an account with our app
-* Event organizers can create local events
-* Local events get displayed to users based on their address/city/zipcode
-* Users can favorite useful info
+- [ ] User logs in to twitter through the app
+- [ ] User can reply to a tweet
+- [ ] User can retweet
+- [x] Event organizers/users create an account with our app
+- [x] Event organizers can create local events
+- [ ] Local events get displayed to users based on their address/city/zipcode
+- [ ] Users can favorite useful info
+
+### Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+#### Code Sprint 2
+<img src='https://github.com/civicagroup/civicarepo/blob/osl/codeSprint2.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+#### Code Sprint 1
+<img src='https://github.com/civicagroup/civicarepo/blob/get_local_news/localNews.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='https://github.com/civicagroup/civicarepo/blob/osl/codeSprint1.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
 
 ### 2. Screen Archetypes
 
@@ -156,10 +170,25 @@ Civica is an app that promotes civic engagement by providing the user access to 
     `GET` | /representatives/?levels=levels | get all representatives for a specific level |
     `GET` | /representatives/?role=role | get all representatives for a specific role |
     
-##### NYTimes API
-- Base URL - [http://api.nytimes.com/svc/semantic/v2/concept](http://api.nytimes.com/svc/semantic/v2/concept)
+##### Google News API
+- Base URL - [https://newsapi.org/s/google-news-api](https://newsapi.org/s/google-news-api)
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
-    `GET`    | /name/nytd_per/<person>.json | get all news for a specific person |
+    `GET`    | /v2/top-headlines | Get the top  news headline |
+    
+#### Twitter API 
+- Base URL - [https://api.twitter.com](https://api.twitter.com)
 
+    HTTP Verb | Endpoint | Description
+   ----------|----------|------------
+    `GET`    | /1.1/statuses/user_timeline.json | Get information on the specifed user |
+    `POST`    | /1.1/favorites/create.json | Favorites (likes) the Tweet specified in the ID parameter  |
+    `POST`    | /1.1/favorites/destroy.json | Unfavorites (un-likes) the Tweet specified in the ID parameter |
+    `POST`    | /1.1/statuses/retweet/:id.json | Retweets a tweet |
+    `POST`    | /1.1/statuses/unretweet/:id.json | Untweets a retweeted status |
+
+## Video Walkthrough
+Here's a walkthrough of implemented user stories:
+
+<img src='./localNews.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
