@@ -21,14 +21,14 @@ import UIKit
 
 class RepresentativesTableViewController: UITableViewController {
 
+    var repsArray = [[String: Any]]()
+    @IBOutlet var repTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        repTableView.dataSource = self
+        repTableView.delegate = self
+        
     }
     /*
     func configure() {
@@ -39,7 +39,9 @@ class RepresentativesTableViewController: UITableViewController {
     }
 */
     // MARK: - Table view data source
-
+        
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -62,7 +64,31 @@ class RepresentativesTableViewController: UITableViewController {
 
         return cell
     }
+    
+    
+    func fetchReps(completion: @escaping((Representative?) -> Void)) {
+       
+        let CIVIC_API_KEY = "AIzaSyCC2MxPRX7kj6Mg6e7eaYaHGMKZWkNb8Jg"
+        let address = "1600 Pennsylvania Avenue Northwest, Washington, DC, 20500"
+        let addressFixed:String = address.replacingOccurrences(of: " ", with: "%20")
+        let url = URL(string: "https://www.googleapis.com/civicinfo/v2/representatives?key=\(CIVIC_API_KEY)&address=\(addressFixed)")!
+        
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let data = data {
+                let decoder = JSONDecoder()
+                let repsList = try? decoder.decode(Representative.self, from: data)
+                completion(repsList)
+                print(repsList ?? "empty")
+            }
 
+        }
+        task.resume()
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
