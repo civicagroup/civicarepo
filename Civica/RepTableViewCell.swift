@@ -1,20 +1,18 @@
 //
-//  RepInfoTableViewCell.swift
+//  RepTableViewCell.swift
 //  Civica
 //
-//  Created by OSL on 4/1/22.
+//  Created by Antonella on 4/16/22.
 //
 
 import UIKit
 
-class RepInfoTableViewCell: UITableViewCell {
+class RepTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var firstlineLabel: UILabel!
-    @IBOutlet weak var secondlineLabel: UILabel!
-    @IBOutlet weak var thirdlineLabel: UILabel!
-    @IBAction func moreinfoButton(_ sender: Any) {
-    }
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

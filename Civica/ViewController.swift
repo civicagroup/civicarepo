@@ -35,10 +35,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.performSegue(withIdentifier: "repsSegue", sender: self)
-        RepService.shared.fetchReps { representatives in
-            print("done!")
-            print(representatives)
-        }
+       
     }
 
 
