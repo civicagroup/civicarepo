@@ -8,7 +8,7 @@
 //import Foundation
 //
 //struct Representative: Codable {
-//    
+//
 //    enum CodingKeys: String, CodingKey {
 ////        case divisions
 //        case name
@@ -21,7 +21,7 @@
 //    let phones: [String]
 ////    let website: String
 ////    let emails: [String]
-//    
+//
 ////    struct address: Codable {
 ////        let line1: String
 ////        let line2: String
@@ -29,8 +29,8 @@
 ////        let state: String
 ////        let zip: String
 ////    }
-//    
-// 
+//
+//
 //    //let imageURL: String
 //}
 //
