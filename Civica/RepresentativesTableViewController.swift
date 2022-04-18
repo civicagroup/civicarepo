@@ -24,10 +24,15 @@ class RepresentativesTableViewController: UITableViewController {
     var repsArray = [[String: Any]]()
     @IBOutlet var repTableView: UITableView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         repTableView.dataSource = self
         repTableView.delegate = self
+        let rawAddress = "1600 Pennsylvania Avenue Northwest, Washington, DC, 20500"
+        let address:String = rawAddress.replacingOccurrences(of: " ", with: "%20")
+        fetchReps(address: address)
         
     }
     /*
@@ -56,9 +61,22 @@ class RepresentativesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "repCell", for: indexPath) as! RepInfoTableViewCell
         
-        cell.nameLabel.text = "Barack Obama"
+//        cell.nameLabel.text = repsArray["name"] as! String
         cell.firstlineLabel.text = "President"
         
+//        let title = currentNews["title"] as! String
+//        let source = currentNews["source_id"] as! String
+//        let time = currentNews["pubDate"] as! String
+//        let url = (currentNews["image_url"] as? String) ?? ""
+        
+//        cell.newsSourceLabel.text = source
+//        cell.newsTitleLabel.text = title
+//        cell.newsTimeLabel.text = time
+//
+//        if url != "" {
+//            let newsImageUrl = URL(string: (url))
+//            cell.newsImage.af.setImage(withURL: newsImageUrl!)
+//        }
 
         // Configure the cell...
 
@@ -66,12 +84,35 @@ class RepresentativesTableViewController: UITableViewController {
     }
     
     
-    func fetchReps(completion: @escaping((Representative?) -> Void)) {
+//    func fetchReps(completion: @escaping((Representative?) -> Void)) {
+//
+//        let CIVIC_API_KEY = "AIzaSyCC2MxPRX7kj6Mg6e7eaYaHGMKZWkNb8Jg"
+//        let address = "1600 Pennsylvania Avenue Northwest, Washington, DC, 20500"
+//        let addressFixed:String = address.replacingOccurrences(of: " ", with: "%20")
+//        let url = URL(string: "https://www.googleapis.com/civicinfo/v2/representatives?key=\(CIVIC_API_KEY)&address=\(addressFixed)")!
+//
+//        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+//        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
+//        let task = session.dataTask(with: request) { (data, response, error) in
+//            if let error = error {
+//                print(error.localizedDescription)
+//            } else if let data = data {
+//                let decoder = JSONDecoder()
+//                let repsArray = try? decoder.decode(Representative.self, from: data)
+//                completion(repsArray)
+//                print(repsArray)
+//
+//            }
+//
+//        }
+//        task.resume()
+//
+//    }
+    
+    func fetchReps(address: String) {
        
         let CIVIC_API_KEY = "AIzaSyCC2MxPRX7kj6Mg6e7eaYaHGMKZWkNb8Jg"
-        let address = "1600 Pennsylvania Avenue Northwest, Washington, DC, 20500"
-        let addressFixed:String = address.replacingOccurrences(of: " ", with: "%20")
-        let url = URL(string: "https://www.googleapis.com/civicinfo/v2/representatives?key=\(CIVIC_API_KEY)&address=\(addressFixed)")!
+        let url = URL(string: "https://www.googleapis.com/civicinfo/v2/representatives?key=\(CIVIC_API_KEY)&address=\(address)")!
         
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
@@ -79,10 +120,10 @@ class RepresentativesTableViewController: UITableViewController {
             if let error = error {
                 print(error.localizedDescription)
             } else if let data = data {
-                let decoder = JSONDecoder()
-                let repsList = try? decoder.decode(Representative.self, from: data)
-                completion(repsList)
-                print(repsList ?? "empty")
+                let dataDictionary = try!
+                JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                self.repsArray = dataDictionary["offices"] as! [[String: Any]]
+                print(self.repsArray)
             }
 
         }
