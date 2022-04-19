@@ -55,7 +55,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="address-line1"/>
                             </textField>
                             <button opaque="NO" contentMode="center" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuP-MS-xys">
-                                <rect key="frame" x="31" y="580" width="343" height="35"/>
+                                <rect key="frame" x="27" y="580" width="347" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <color key="tintColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
@@ -92,6 +92,7 @@
                     </view>
                     <connections>
                         <outlet property="cityField" destination="Kgo-AI-zhm" id="bFg-Vw-tLr"/>
+                        <outlet property="goButton" destination="iuP-MS-xys" id="19y-c1-SVM"/>
                         <outlet property="govLevelField" destination="reU-Yl-95E" id="H7P-ys-iAk"/>
                         <outlet property="stateField" destination="6dP-Qy-aB8" id="08W-yE-nHK"/>
                         <outlet property="streetField" destination="dHG-lw-KtW" id="7j1-Kh-sEg"/>
