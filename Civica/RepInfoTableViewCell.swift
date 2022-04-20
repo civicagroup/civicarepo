@@ -9,10 +9,12 @@ import UIKit
 
 class RepInfoTableViewCell: UITableViewCell {
 
+
+
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var firstlineLabel: UILabel!
-    @IBOutlet weak var secondlineLabel: UILabel!
-    @IBOutlet weak var thirdlineLabel: UILabel!
+    @IBOutlet weak var secondLabel: UILabel!
+
     @IBAction func moreinfoButton(_ sender: Any) {
     }
     

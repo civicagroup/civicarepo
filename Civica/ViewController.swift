@@ -29,12 +29,15 @@ class ViewController: UIViewController {
         completionHandler?(streetField.text)
 //        dismiss(animated: true, completion: nil)
     }
-   
+    
+    @IBOutlet weak var goButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.performSegue(withIdentifier: "repsSegue", sender: self)
+        goButton.layer.cornerRadius = 5
        
     }
 

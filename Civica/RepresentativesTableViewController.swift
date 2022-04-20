@@ -21,7 +21,11 @@ import UIKit
 
 class RepresentativesTableViewController: UITableViewController {
 
-    var repsArray = [[String: Any]]()
+
+    var repsArray = [[String: AnyObject]]()
+    var officialsDict = [[String: AnyObject]]()
+    
+   
     @IBOutlet var repTableView: UITableView!
     
     
@@ -30,19 +34,11 @@ class RepresentativesTableViewController: UITableViewController {
         super.viewDidLoad()
         repTableView.dataSource = self
         repTableView.delegate = self
-        let rawAddress = "1600 Pennsylvania Avenue Northwest, Washington, DC, 20500"
-        let address:String = rawAddress.replacingOccurrences(of: " ", with: "%20")
-        fetchReps(address: address)
+        fetchReps()
+        
         
     }
-    /*
-    func configure() {
-        RepService.shared.fetchReps() { [weak self]
-            detail in
-            self?.nameLabel.text = detail?.name
-        }
-    }
-*/
+  
     // MARK: - Table view data source
         
     
@@ -60,9 +56,10 @@ class RepresentativesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "repCell", for: indexPath) as! RepInfoTableViewCell
-        
-//        cell.nameLabel.text = repsArray["name"] as! String
-        cell.firstlineLabel.text = "President"
+        fetchReps()
+//        cell.nameLabel.text=repsArray[0]["divisionId"] as! String
+//        print(cell.nameLabel.text as! String)
+//        cell.nameLabel.text = repsArray.description
         
 //        let title = currentNews["title"] as! String
 //        let source = currentNews["source_id"] as! String
@@ -109,25 +106,51 @@ class RepresentativesTableViewController: UITableViewController {
 //
 //    }
     
-    func fetchReps(address: String) {
-       
+    func fetchReps() {
         let CIVIC_API_KEY = "AIzaSyCC2MxPRX7kj6Mg6e7eaYaHGMKZWkNb8Jg"
+        let rawAddress = "1600 Pennsylvania Avenue Northwest, Washington, DC, 20500"
+        let address:String = rawAddress.replacingOccurrences(of: " ", with: "%20")
         let url = URL(string: "https://www.googleapis.com/civicinfo/v2/representatives?key=\(CIVIC_API_KEY)&address=\(address)")!
-        
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
-        let task = session.dataTask(with: request) { (data, response, error) in
+        let task = session.dataTask(with: request) { [self] (data, response, error) in
             if let error = error {
                 print(error.localizedDescription)
             } else if let data = data {
+//                let repsArray = try? JSONDecoder().decode(RepResponse.self, from: data)
+//                if let repsArray = repsArray {
+//                    print(repsArray.self)
+//                }
+
                 let dataDictionary = try!
-                JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                self.repsArray = dataDictionary["offices"] as! [[String: Any]]
-                print(self.repsArray)
+                                JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
+//                                self.repsArray = dataDictionary["offices"] as! [[String: AnyObject]]
+                                print(dataDictionary)
+//
+//                let dataDictionary = try!
+//                JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: AnyObject]; self.repsArray = dataDictionary["offices"] as! [[String: AnyObject]]; self.officialsDict = dataDictionary["officials"] as! [[String:AnyObject]]
+//
+//                print(repsArray)
+               
+//                for i in offices {
+//                    for officialsIndex in i.indicies{
+//                        let officialDictionary = officialsDict[officialsIndex]
+//                        if let newOfficial = Official(dictionary: officialDictionary, office: i) {
+//                            print(newOfficial)
+//                            officiales.append(newOfficial)
+//                        }
+//                    }
+//                    self.officials = officiales
+//                    print(officials)
+//                }
+                
             }
 
         }
         task.resume()
+        
+        
+       
         
     }
 
