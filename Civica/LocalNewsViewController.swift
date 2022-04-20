@@ -8,11 +8,13 @@ import UIKit
 import AlamofireImage
 import SafariServices
 
-class LocalNewsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class LocalNewsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var newsTableView: UITableView!
     var news = [[String: Any]]()
     var nextPage: Int = 0
+    var searchString: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +22,15 @@ class LocalNewsViewController: UIViewController, UITableViewDataSource, UITableV
         // Do any additional setup after loading the view.
         newsTableView.dataSource = self
         newsTableView.delegate = self
+        
+        searchBar.delegate = self
+        
         getNews(pageNumber: nextPage)
+//        getNewsWithQuery(query: "california")
     }
     
     func getNews(pageNumber: Int){
+        self.news.removeAll()
         let url = URL(string: "https://newsdata.io/api/1/news?apikey=pub_6332cf3898e5a1fe6775a85dd43794c2f6d6&category=politics&country=us&page=\(pageNumber)")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
@@ -35,7 +42,7 @@ class LocalNewsViewController: UIViewController, UITableViewDataSource, UITableV
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 
                 self.news = dataDictionary["results"] as! [[String: Any]]
-                self.nextPage = dataDictionary["nextPage"] as! Int
+                self.nextPage = (dataDictionary["nextPage"] as? Int) ?? -1
                 self.newsTableView.reloadData()
             }
         }
@@ -57,7 +64,31 @@ class LocalNewsViewController: UIViewController, UITableViewDataSource, UITableV
                 for news in temp {
                     self.news.append(news)
                 }
-                self.nextPage = dataDictionary["nextPage"] as! Int
+                self.nextPage = (dataDictionary["nextPage"] as? Int) ?? -1
+                self.newsTableView.reloadData()
+            }
+        }
+        task.resume()
+    }
+    
+    func getNewsWithQuery(query: String){
+        self.news.removeAll()
+        let url = URL(string: "https://newsdata.io/api/1/news?apikey=pub_6332cf3898e5a1fe6775a85dd43794c2f6d6&category=politics&country=us&page=\(self.nextPage)&q=\(query)")!
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        let task = session.dataTask(with: request) { (data, response, error) in
+            // This will run when the network request returns
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let data = data {
+                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                
+                let temp = dataDictionary["results"] as! [[String: Any]]
+                for news in temp {
+                    self.news.append(news)
+                }
+                self.nextPage = (dataDictionary["nextPage"] as? Int) ?? -1
+                
                 self.newsTableView.reloadData()
             }
         }
@@ -66,7 +97,13 @@ class LocalNewsViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row + 1 == self.news.count {
-            getMoreNews()
+            if (searchBar.text == "" && self.nextPage != -1) {
+                getMoreNews()
+            } else {
+                if (self.nextPage != -1) {
+                    getNewsWithQuery(query: self.searchString)
+                }
+            }
         }
     }
     
@@ -113,6 +150,24 @@ class LocalNewsViewController: UIViewController, UITableViewDataSource, UITableV
                 let vc = SFSafariViewController(url: url, configuration: config)
                 present(vc, animated: true)
             }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.nextPage = 0
+        var text = searchBar.text
+        text = text?.trimmingCharacters(in: .whitespaces)
+        text = text?.replacingOccurrences(of: " ", with: "%20")
+        if (text != nil) {
+            getNewsWithQuery(query: text!)
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchString = searchText
+        if (searchText.trimmingCharacters(in: .whitespaces) == "") {
+            self.nextPage = 0
+            getNews(pageNumber: nextPage)
+        }
     }
 
     /*
