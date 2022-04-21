@@ -15,6 +15,9 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UIImagePi
     @IBOutlet weak var startTimeField: UITextField!
     @IBOutlet weak var endTimeField: UITextField!
     
+    @IBOutlet weak var eventAdddressField: UITextField!
+    @IBOutlet weak var eventZipcodeField: UITextField!
+    
     @IBOutlet weak var eventNameField: UITextField!
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventDesc: UITextView!
@@ -151,10 +154,14 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UIImagePi
 
     @IBAction func onCreate(_ sender: Any) {
         let event = PFObject(className: "Event")
+        // PFObject value cannot be nil therefore providing optional value
         event["Author"] = PFUser.current()
-        event["Description"] = eventDesc.text
-        event["StartTime"] = startTime
-        event["EndTime"] = endTime
+        event["Description"] = eventDesc.text ?? ""
+        event["StartTime"] = startTime ?? NSNull()
+        event["EndTime"] = endTime ?? NSNull()
+        event["Address"] = eventAdddressField.text ?? ""
+        event["Zipcode"] = eventZipcodeField.text ?? ""
+        event["EventName"] = eventNameField.text ?? ""
         
         if imageChanged, let imageData = eventImage.image?.pngData() {
             let imageFile = PFFileObject(name: "Image.png", data: imageData)
@@ -164,19 +171,25 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UIImagePi
         event.saveInBackground { success, error in
             if success {
                 print("Event saved!")
-                self.displayAlert(withTitle: "Awesome", message: "Your event is created.")
+//                self.displayAlert(withTitle: "Awesome", message: "Your event is created.")
+                self.dismiss(animated: true)
+                let main = UIStoryboard(name: "Main", bundle: nil)
+                let eventListViewController = main.instantiateViewController(identifier: "EventListViewController")
+                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                      let delegate = windowScene.delegate as? SceneDelegate else { return }
+                delegate.window?.rootViewController = eventListViewController
             } else {
                 print("Error saving event.")
             }
         }
     }
     
-    func displayAlert(withTitle title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Okay", style: .default)
-        alert.addAction(okAction)
-        self.present(alert, animated: true)
-    }
+//    func displayAlert(withTitle title: String, message: String) {
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//        let okAction = UIAlertAction(title: "Okay", style: .default)
+//        alert.addAction(okAction)
+//        self.present(alert, animated: true)
+//    }
 
     /*
     // MARK: - Navigation

@@ -17,8 +17,9 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsername(inBackground: usernameField.text!, password: passwordField.text!) { (user: PFUser?, error: Error?) in
             if user != nil {
 //                self.displayAlert(withTitle: "Login Successful", message: "")
+                self.performSegue(withIdentifier: "LoginToCreateEventSegue", sender: self)
 //                self.dismiss(animated: true)
-                self.performSegue(withIdentifier: "LoginSegue", sender: self)
+
             } else {
                 self.displayAlert(withTitle: "Error", message: error!.localizedDescription)
             }
@@ -33,7 +34,7 @@ class LoginViewController: UIViewController {
             if let error = error {
                 self.displayAlert(withTitle: "Error", message: error.localizedDescription)
             } else {
-                self.displayAlert(withTitle: "Success", message: "Account has been successfully created.")
+                self.displayAlert(withTitle: "Success", message: "Account has been successfully created. You can login now.")
             }
         }
     }
@@ -43,12 +44,12 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func displayAlert(withTitle title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Okay", style: .default)
-        alert.addAction(okAction)
-        self.present(alert, animated: true)
-    }
+//    func displayAlert(withTitle title: String, message: String) {
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//        let okAction = UIAlertAction(title: "Okay", style: .default)
+//        alert.addAction(okAction)
+//        self.present(alert, animated: true)
+//    }
 
     /*
     // MARK: - Navigation
