@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+class Social {
+    
+    let type: String?
+    let id: String?
+    
+    init(type: String?, id: String?) {
+        self.type = type
+        self.id = id
+    }
+}
