@@ -61,12 +61,9 @@
 		BC21134F4356DD4FD7CE86E7 /* Pods-Civica.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Civica.debug.xcconfig"; path = "Target Support Files/Pods-Civica/Pods-Civica.debug.xcconfig"; sourceTree = "<group>"; };
 		D58D23C427FDC7B30059CB69 /* LocalNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNewsViewController.swift; sourceTree = "<group>"; };
 		D58D23C627FDCF620059CB69 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		D90AB6812810B6380094C939 /* EventListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
 		D90AB6832810B64E0094C939 /* EventDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewCell.swift; sourceTree = "<group>"; };
 		D90AB68528110A5A0094C939 /* MyUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUtil.swift; sourceTree = "<group>"; };
-=======
->>>>>>> c6f56645a93abf0e6fc870897ec4245ba1428693
 		D9283E772800E83A005FBE47 /* TwitterAPICaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAPICaller.swift; sourceTree = "<group>"; };
 		D933D3BD27F93504000AF78B /* RepDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepDetailViewController.swift; sourceTree = "<group>"; };
 		D933D3BF27F93F21000AF78B /* RepDetailNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepDetailNewsTableViewCell.swift; sourceTree = "<group>"; };
