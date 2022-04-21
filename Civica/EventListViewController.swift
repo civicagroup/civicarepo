@@ -25,7 +25,7 @@ class EventListViewController: UIViewController, UITableViewDataSource, UITableV
         let event = self.events[indexPath.row]
         cell.eventDesc.text = event["Description"] as? String ?? ""
         cell.eventName.text = event["EventName"] as? String ?? ""
-        cell.eventLocation.text = "Location: \(event["Address"] ?? "TBD"), \(event["Zipcode"] ?? "")."
+        cell.eventLocation.text = "Location: \(event["Address"] ?? "TBD"), \(event["Zipcode"] ?? "")"
         
         let authorObject = event["Author"] as! PFUser
         cell.eventOrganizer.text = "Created by \(authorObject.username as! String)"
