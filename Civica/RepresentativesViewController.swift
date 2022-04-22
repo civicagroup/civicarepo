@@ -12,6 +12,7 @@ class RepresentativesViewController: UIViewController, UITableViewDataSource, UI
     var repsArray = [[String: Any]]()
     var positions : [Int: String] = [:]
     var officesArray = [[String: Any]]()
+    var rawAddress: String?
     @IBOutlet weak var repTableView: UITableView!
     
     override func viewDidLoad() {
@@ -33,26 +34,35 @@ class RepresentativesViewController: UIViewController, UITableViewDataSource, UI
         
         let currentRep = self.repsArray[indexPath.row]
         let name = currentRep["name"] as! String
-        let addressObject = (currentRep["address"] as! [[String: Any]])[0]
-        let addressLine1 = addressObject["line1"] as! String
-        let city = addressObject["city"] as! String
-        let state = addressObject["state"] as! String
-        let zip = addressObject["zip"] as! String
+        if let addressObjects = (currentRep["address"] as? [[String: Any]]) {
+            let addressObject = addressObjects[0]
+            let addressLine1 = addressObject["line1"] as! String
+            let city = addressObject["city"] as! String
+            let state = addressObject["state"] as! String
+            let zip = addressObject["zip"] as! String
+            cell.addressLabel.text = "\(addressLine1), \(city), \(state), \(zip)"
+        }
+        
         let party = currentRep["party"] as! String
         let office = self.positions[indexPath.row]!
         
         cell.nameLabel.text = name
         cell.partyLabel.text = party
-        cell.addressLabel.text = "\(addressLine1), \(city), \(state), \(zip)"
         cell.officeLabel.text = office
 
         return cell
     }
+    @IBAction func onBack(_ sender: Any) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let addresVC = main.instantiateViewController(identifier: "AddressViewController")
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let delegate = windowScene.delegate as? SceneDelegate else { return }
+        delegate.window?.rootViewController = addresVC
+    }
     
     func fetchReps() {
         let CIVIC_API_KEY = "AIzaSyCC2MxPRX7kj6Mg6e7eaYaHGMKZWkNb8Jg"
-        let rawAddress = "1600 Pennsylvania Avenue Northwest, Washington, DC, 20500"
-        let address:String = rawAddress.replacingOccurrences(of: " ", with: "%20")
+        guard let address:String = rawAddress?.replacingOccurrences(of: " ", with: "%20") else {return}
         let url = URL(string: "https://www.googleapis.com/civicinfo/v2/representatives?key=\(CIVIC_API_KEY)&address=\(address)")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
@@ -74,15 +84,18 @@ class RepresentativesViewController: UIViewController, UITableViewDataSource, UI
                     }
                 }
                 
-                print("PRINTING FROM FETCH FUNCTION:")
-                print(self.repsArray)
-                print(self.positions)
+//                print("PRINTING FROM FETCH FUNCTION:")
+//                print(self.repsArray)
+//                print(self.positions)
                 self.repTableView.reloadData()
             }
         }
         task.resume()
         
     }
+    
+    
+
     
     // MARK: - Navigation
 

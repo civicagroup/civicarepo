@@ -16,8 +16,8 @@ class RepDetailViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var contactStack: UIStackView!
     
     var tweetArray = [NSDictionary]()
-    let repName = "Barack+Obama"
-    let repTwitterScreenName = "barackobama"  // this is the twitter handle
+    var repName = ""
+    var repTwitterScreenName: String? // this is the twitter handle
     var newsArray = [[String: Any]]()
     var numberOfTweet: Int!
     
@@ -39,25 +39,33 @@ class RepDetailViewController: UIViewController, UITableViewDelegate, UITableVie
             let currentNews = newsArray[indexPath.row]
             let source = (currentNews["source"] as! [String:Any])["name"] as! String
             let time = currentNews["publishedAt"] as! String
-            let url = (currentNews["urlToImage"] as? String) ?? ""
+            let url = currentNews["urlToImage"] as? String
             
             cell.newsLabel.text =  currentNews["title"] as? String
             cell.newsSource.text = source
             cell.newsDate.text = time
-            
-            if url != "" {
-                let newsImageUrl = URL(string: (url))
-                cell.newsImage.af.setImage(withURL: newsImageUrl!)
+ 
+            if url != nil, let newsImageUrl = URL(string: (url!)) {
+                cell.newsImage.af.setImage(withURL: newsImageUrl)
             }
+            
             return cell
 
         } else if tableView == tweetTableView {
             let cell = tableView.dequeueReusableCell(withIdentifier: "RepDetailTweetTableViewCell") as! RepDetailTweetTableViewCell
- 
-            let user = tweetArray[indexPath.row]["user"] as! NSDictionary
+            
+            guard repTwitterScreenName != nil else {
+//                displayAlert(withTitle: "", message: "This representative doesn't have a public Twitter account.")
+                cell.tweetContent.text = "This representative doesn't have a public Twitter account."
+                let date = String(DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short))
+                cell.tweetDate.text = date
+                return cell
+            }
+            
             let tweet = tweetArray[indexPath.row]
             cell.tweetContent.text = tweet["text"] as? String
             cell.tweetDate.text = tweet["created_at"] as? String
+            
             
 //            let entities = tweetArray[indexPath.row]["entities"] as? NSDictionary
 //            if entities != nil && entities?["media"] != nil {
@@ -71,23 +79,21 @@ class RepDetailViewController: UIViewController, UITableViewDelegate, UITableVie
             
             return cell
         }
-    
+        
         return UITableViewCell()
     }
         
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableView == newsTableView ? newsArray.count: tweetArray.count
+//        return tableView == newsTableView ? newsArray.count: max(tweetArray.count,1)
     }
 
     @objc func loadTweets(){
         // get a representative's tweets
         let myUrl = "https://api.twitter.com/1.1/statuses/user_timeline.json"
-//        guard !userIdArray.isEmpty else {
-//            print("This representative don't have a twitter account")
-//            return
-//        }
+        guard repTwitterScreenName != nil else {
+            return
+        }
 //        let userId = userIdArray[0]["id"] as! Int
 //        let userId = 1512453420443217920
         numberOfTweet = 20
@@ -169,30 +175,54 @@ class RepDetailViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func popuplateInfo() {
-        print(currentRep)
         let name = currentRep["name"] as! String
-        let addressObject = (currentRep["address"] as! [[String: Any]])[0]
-        let addressLine1 = addressObject["line1"] as! String
-        let city = addressObject["city"] as! String
-        let state = addressObject["state"] as! String
-        let zip = addressObject["zip"] as! String
-        let number = (currentRep["phones"] as! [String])[0]
+        if let addressObjects = (currentRep["address"] as? [[String: Any]]) {
+            let addressObject = addressObjects[0]
+            let addressLine1 = addressObject["line1"] as! String
+            let city = addressObject["city"] as! String
+            let state = addressObject["state"] as! String
+            let zip = addressObject["zip"] as! String
+            repAddressLabel.text = "\(addressLine1), \(city), \(state), \(zip)"
+        }
+        
+        let number = (currentRep["phones"] as? [String] ?? ["Phone Number"])[0]
         let party = currentRep["party"] as! String
         
+        // if vacant position, the repName for news look up would be the position title
+        if name == "VACANT" {
+            repName = self.repPosition.replacingOccurrences(of: " ", with: "+")
+        } else {
+            repName = name.replacingOccurrences(of: " ", with: "+")
+        }
         repNameLabel.text = name
         repPositionLabel.text = self.repPosition
-        repAddressLabel.text = "\(addressLine1), \(city), \(state), \(zip)"
         repNumberLabel.text = number
         repPartyLabel.text = party
+        
+        let photoUrlStr = currentRep["photoUrl"] as? String
+        print("\(name), rep photo url \(photoUrlStr as? String ?? "NA")")
+        if photoUrlStr != nil, let photoImageUrl = URL(string: (photoUrlStr!)) {
+            repImage.af.setImage(withURL: photoImageUrl)
+        }
+        
+        
+        if let channels = currentRep["channels"] as? [NSDictionary], channels.isEmpty == false {
+            for channel in channels {
+                if channel["type"] as! String == "Twitter" {
+                    repTwitterScreenName = channel["id"] as! String
+                }
+            }
+                        
+        }
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        getTwitterUserId(representativeName)
+        popuplateInfo()
         loadTweets()
         getNews()
-        popuplateInfo()
         newsTableView.delegate = self
         newsTableView.dataSource = self
         tweetTableView.delegate = self

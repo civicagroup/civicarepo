@@ -29,27 +29,45 @@ class ViewController: UIViewController {
 //    public var completionHandler: ((String?) -> Void)?
     
     
-    @IBAction func repsButton(_ sender: Any) {
-//        completionHandler?(streetField.text)
-//        let vc = RepInfoTableViewCell(nibName: RepInfoTableViewCell, bundle: nil)
-//        vc.address = streetField.text
-
-//        navigationController?.pushViewController(vc, animated: true)
-        
-//        dismiss(animated: true, completion: nil)
-    }
     
     @IBOutlet weak var goButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(zipField.text)
         // Do any additional setup after loading the view.
-        self.performSegue(withIdentifier: "repsSegue", sender: self)
+//        self.performSegue(withIdentifier: "repsSegue", sender: self)
         goButton.layer.cornerRadius = 5
        
     }
-
-
+    
+    // MARK: - Navigation
+    
+    @IBAction func onSeeMyRep(_ sender: Any) {
+        guard zipField.text != "" else {
+            displayAlert(withTitle: "Error", message: "Zipcode is required.")
+            return
+        }
+        self.performSegue(withIdentifier: "repsSegue", sender: self)
+    }
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        // Pass the selected movie to the dettails view controller
+        if segue.identifier == "repsSegue" {
+            let tabBarViewController = segue.destination as! UITabBarController
+            
+            let repVCIndex = 0
+            if let repNav = tabBarViewController.viewControllers![repVCIndex] as? UINavigationController, let repViewController = repNav.topViewController as? RepresentativesViewController {
+                repViewController.rawAddress = "\(zipField.text ?? "00000")"
+            } else {
+                print("This vc doesn't exist")
+            }
+            
+        }
+    }
 }
 
