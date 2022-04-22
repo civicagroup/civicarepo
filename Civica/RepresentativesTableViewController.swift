@@ -14,7 +14,7 @@ import UIKit
 
 class RepresentativesTableViewController: UITableViewController {
     
-    var repsArray = [[String: AnyObject]]()
+    var repsArray = [[String: Any]]()
     var officialsDict = [[String: AnyObject]]()
     var dataDictionary = [String: AnyObject]()
     @IBOutlet var repTableView: UITableView!
@@ -27,34 +27,31 @@ class RepresentativesTableViewController: UITableViewController {
         repTableView.delegate = self
         fetchReps()
         
-//        if let receivedText = address {
-//            address = receivedText
-//            print(address)
-//        }
-        
     }
   
     // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 11
+        return self.repsArray.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "repCell", for: indexPath) as! RepInfoTableViewCell
-//      repsArray = dataDictionary["officials"] as! [[String: AnyObject]]
-        print("printing from table view cell")
-        print(dataDictionary)
-
-//        let rep = repsArray[indexPath.row]
         
+        let currentRep = self.repsArray[indexPath.row]
+        let name = currentRep["name"] as! String
+        let addressObject = (currentRep["address"] as! [[String: Any]])[0]
+        let addressLine1 = addressObject["line1"] as! String
+        let city = addressObject["city"] as! String
+        let state = addressObject["state"] as! String
+        let zip = addressObject["zip"] as! String
+        let party = currentRep["party"] as! String
+        
+//        cell.nameLabel.text = name
+//        cell.firstlineLabel.text = party
+//        cell.secondLabel.text = "\(addressLine1), \(city), \(state), \(zip)"
 
         return cell
     }
@@ -72,11 +69,14 @@ class RepresentativesTableViewController: UITableViewController {
             } else if let data = data {
                 dataDictionary = try!
                                 JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
+                
+                self.repsArray = dataDictionary["officials"] as! [[String: Any]]
+                
+                print("PRINTING FROM FETCH FUNCTION:")
+                print(self.repsArray)
                 self.repTableView.reloadData()
                 
             }
-            print("PRINTING FROM FETCH FUNCTION:")
-            print(dataDictionary)
 
         }
         task.resume()
