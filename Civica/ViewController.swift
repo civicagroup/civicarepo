@@ -31,10 +31,10 @@ class ViewController: UIViewController {
     
     @IBAction func repsButton(_ sender: Any) {
 //        completionHandler?(streetField.text)
-        let vc = RepInfoTableViewCell(nibName: RepInfoTableViewCell, bundle: nil)
-        vc.address = streetField.text
+//        let vc = RepInfoTableViewCell(nibName: RepInfoTableViewCell, bundle: nil)
+//        vc.address = streetField.text
 
-        navigationController?.pushViewController(vc, animated: true)
+//        navigationController?.pushViewController(vc, animated: true)
         
 //        dismiss(animated: true, completion: nil)
     }
