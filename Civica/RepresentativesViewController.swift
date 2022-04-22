@@ -10,6 +10,8 @@ import UIKit
 class RepresentativesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var repsArray = [[String: Any]]()
+    var positions : [Int: String] = [:]
+    var officesArray = [[String: Any]]()
     @IBOutlet weak var repTableView: UITableView!
     
     override func viewDidLoad() {
@@ -37,10 +39,12 @@ class RepresentativesViewController: UIViewController, UITableViewDataSource, UI
         let state = addressObject["state"] as! String
         let zip = addressObject["zip"] as! String
         let party = currentRep["party"] as! String
+        let office = self.positions[indexPath.row]!
         
         cell.nameLabel.text = name
         cell.partyLabel.text = party
         cell.addressLabel.text = "\(addressLine1), \(city), \(state), \(zip)"
+        cell.officeLabel.text = office
 
         return cell
     }
@@ -60,28 +64,40 @@ class RepresentativesViewController: UIViewController, UITableViewDataSource, UI
                                 JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
                 
                 self.repsArray = dataDictionary["officials"] as! [[String: Any]]
+                self.officesArray = dataDictionary["offices"] as! [[String: Any]]
+                
+                for office in self.officesArray {
+                    let indicies = office["officialIndices"] as! [Int]
+                    let name = office["name"] as! String
+                    for index in indicies {
+                        self.positions[index] = name
+                    }
+                }
                 
                 print("PRINTING FROM FETCH FUNCTION:")
                 print(self.repsArray)
+                print(self.positions)
                 self.repTableView.reloadData()
-                
             }
-
         }
         task.resume()
         
     }
     
-    
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let cell = sender as! UITableViewCell
+        let indexPath = self.repTableView.indexPath(for: cell)!
+        let rep = self.repsArray[indexPath.row]
+        
+        // Pass the selected movie to the dettails view controller
+        let repDetailViewController = segue.destination as! RepDetailViewController
+        
+        self.repTableView.deselectRow(at: indexPath, animated: true)
     }
-    */
 
 }
