@@ -41,8 +41,8 @@ The **Project Board** can be located [here](https://github.com/orgs/civicagroup/
 - [ ] User logs in to twitter through the app
 - [ ] User can reply to a tweet
 - [ ] User can retweet
-- [ ] Event organizers/users create an account with our app
-- [ ] Event organizers can create local events
+- [x] Event organizers/users create an account with our app
+- [x] Event organizers can create local events
 - [ ] Local events get displayed to users based on their address/city/zipcode
 - [ ] Users can favorite useful info
 
@@ -50,9 +50,12 @@ The **Project Board** can be located [here](https://github.com/orgs/civicagroup/
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/civicagroup/civicarepo/blob/get_local_news/localNews.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+#### Code Sprint 2
+<img src='https://github.com/civicagroup/civicarepo/blob/osl/codeSprint2.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
-<img src='https://github.com/civicagroup/civicarepo/blob/osl/demo3.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+#### Code Sprint 1
+<img src='https://github.com/civicagroup/civicarepo/blob/get_local_news/localNews.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='https://github.com/civicagroup/civicarepo/blob/osl/codeSprint1.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 
 ### 2. Screen Archetypes
