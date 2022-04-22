@@ -738,31 +738,31 @@
                                             <constraint firstAttribute="width" secondItem="MZh-WI-agP" secondAttribute="height" multiplier="6:8" id="1zV-q7-EGa"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Representative Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ta-h5-8Lc">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Representative Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ta-h5-8Lc">
                                         <rect key="frame" x="0.0" y="320" width="240" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGv-Pp-GHa">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Position" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGv-Pp-GHa">
                                         <rect key="frame" x="0.0" y="344" width="240" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUi-OY-04e">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUi-OY-04e">
                                         <rect key="frame" x="0.0" y="364.33333333333326" width="240" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telephone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lz5-Lk-I9g">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telephone" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lz5-Lk-I9g">
                                         <rect key="frame" x="0.0" y="384.66666666666663" width="240" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23P-YY-YiV">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23P-YY-YiV">
                                         <rect key="frame" x="0.0" y="405" width="240" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -771,7 +771,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="5ta-h5-8Lc" firstAttribute="top" secondItem="MZh-WI-agP" secondAttribute="bottom" constant="40" id="D0k-Cr-f9t"/>
-                                    <constraint firstAttribute="trailing" secondItem="MZh-WI-agP" secondAttribute="trailing" constant="10" id="K2I-59-0VM"/>
                                     <constraint firstItem="MZh-WI-agP" firstAttribute="top" secondItem="DAp-aF-crs" secondAttribute="top" id="e17-GL-jrb"/>
                                     <constraint firstItem="MZh-WI-agP" firstAttribute="leading" secondItem="DAp-aF-crs" secondAttribute="leading" constant="10" id="r1g-v6-BZY"/>
                                 </constraints>
@@ -821,6 +820,12 @@
                     <connections>
                         <outlet property="contactStack" destination="DAp-aF-crs" id="EOf-hm-9uM"/>
                         <outlet property="newsTableView" destination="UiF-uo-0Sk" id="gfT-wf-pjj"/>
+                        <outlet property="repAddressLabel" destination="KUi-OY-04e" id="QPV-NS-pgA"/>
+                        <outlet property="repImage" destination="MZh-WI-agP" id="vUg-jx-N0C"/>
+                        <outlet property="repNameLabel" destination="5ta-h5-8Lc" id="QV9-L5-MLr"/>
+                        <outlet property="repNumberLabel" destination="lz5-Lk-I9g" id="3cx-8i-0hK"/>
+                        <outlet property="repPartyLabel" destination="23P-YY-YiV" id="l8t-yj-QZK"/>
+                        <outlet property="repPositionLabel" destination="GGv-Pp-GHa" id="9z5-dX-0rj"/>
                         <outlet property="segmentedControl" destination="gXp-mD-nSY" id="ZWj-6v-pHH"/>
                         <outlet property="tweetTableView" destination="OTy-Wh-MBX" id="aMm-QE-bu2"/>
                     </connections>

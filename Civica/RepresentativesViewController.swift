@@ -96,6 +96,8 @@ class RepresentativesViewController: UIViewController, UITableViewDataSource, UI
         
         // Pass the selected movie to the dettails view controller
         let repDetailViewController = segue.destination as! RepDetailViewController
+        repDetailViewController.currentRep = rep
+        repDetailViewController.repPosition = self.positions[indexPath.row]!
         
         self.repTableView.deselectRow(at: indexPath, animated: true)
     }
