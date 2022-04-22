@@ -9,6 +9,18 @@ import UIKit
 
 class RepInfoTableViewCell: UITableViewCell {
 
+
+    @IBOutlet weak var repImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var officeLabel: UILabel!
+    @IBOutlet weak var partyLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    
+    
+//    @IBOutlet weak var nameLabel: UILabel!
+//    @IBOutlet weak var firstlineLabel: UILabel!
+//    @IBOutlet weak var secondLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

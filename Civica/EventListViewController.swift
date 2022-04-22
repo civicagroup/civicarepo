@@ -75,14 +75,13 @@ class EventListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     @IBAction func onCreateEvent(_ sender: Any) {
-//        print(PFUser.current())
-        if PFUser.current() != nil {
-            performSegue(withIdentifier: "toCreateEvent", sender: self)
-        } else {
-            performSegue(withIdentifier: "toLoginPage", sender: self)
-        }
+        //        print(PFUser.current())
+                if PFUser.current() != nil {
+                    performSegue(withIdentifier: "toCreateEvent", sender: self)
+                } else {
+                    performSegue(withIdentifier: "toLoginPage", sender: self)
+                }
     }
-    
     
     @IBAction func onLogout(_ sender: Any) {
         PFUser.logOut()

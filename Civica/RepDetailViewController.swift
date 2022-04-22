@@ -15,15 +15,20 @@ class RepDetailViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var contactStack: UIStackView!
     
-    //    let newsArray = ["a", "b", "c", "d", "e"]
     var tweetArray = [NSDictionary]()
-//    var userIdArray = [NSDictionary]()
     let repName = "Barack+Obama"
     let repTwitterScreenName = "barackobama"  // this is the twitter handle
-//    let userId = 20
-//    var useArray: [String] = []
     var newsArray = [[String: Any]]()
     var numberOfTweet: Int!
+    
+    var currentRep: [String: Any]!
+    var repPosition: String = ""
+    @IBOutlet weak var repImage: UIImageView!
+    @IBOutlet weak var repNameLabel: UILabel!
+    @IBOutlet weak var repPositionLabel: UILabel!
+    @IBOutlet weak var repAddressLabel: UILabel!
+    @IBOutlet weak var repNumberLabel: UILabel!
+    @IBOutlet weak var repPartyLabel: UILabel!
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -163,11 +168,31 @@ class RepDetailViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    func popuplateInfo() {
+        print(currentRep)
+        let name = currentRep["name"] as! String
+        let addressObject = (currentRep["address"] as! [[String: Any]])[0]
+        let addressLine1 = addressObject["line1"] as! String
+        let city = addressObject["city"] as! String
+        let state = addressObject["state"] as! String
+        let zip = addressObject["zip"] as! String
+        let number = (currentRep["phones"] as! [String])[0]
+        let party = currentRep["party"] as! String
+        
+        repNameLabel.text = name
+        repPositionLabel.text = self.repPosition
+        repAddressLabel.text = "\(addressLine1), \(city), \(state), \(zip)"
+        repNumberLabel.text = number
+        repPartyLabel.text = party
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        getTwitterUserId(representativeName)
         loadTweets()
         getNews()
+        popuplateInfo()
         newsTableView.delegate = self
         newsTableView.dataSource = self
         tweetTableView.delegate = self

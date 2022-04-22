@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		1F49826080F3CF94231CEB1D /* Pods_Civica_CivicaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC6A52D6C21EBA4CAEB7B1E /* Pods_Civica_CivicaUITests.framework */; };
 		6AE273463EA95C147607C442 /* Pods_CivicaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086F762B44F20047073C46C7 /* Pods_CivicaTests.framework */; };
+		A802BFF2280499CC000F7C90 /* RepService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802BFF1280499CC000F7C90 /* RepService.swift */; };
+		A802BFF428049A52000F7C90 /* Representative.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802BFF328049A52000F7C90 /* Representative.swift */; };
+		A818517F280B93B900D81B5F /* RepresentativesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818517E280B93B900D81B5F /* RepresentativesTableViewController.swift */; };
+		A8819038280CF73E00A218B8 /* RepResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8819037280CF73D00A218B8 /* RepResponse.swift */; };
+		A8D1D07B2812295300495505 /* RepresentativesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1D07A2812295300495505 /* RepresentativesViewController.swift */; };
 		AF661B51A845ED8469B8200C /* Pods_Civica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6536B4A18ABBF0CCD19877 /* Pods_Civica.framework */; };
 		D58D23C527FDC7B30059CB69 /* LocalNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D23C427FDC7B30059CB69 /* LocalNewsViewController.swift */; };
 		D58D23C727FDCF620059CB69 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58D23C627FDCF620059CB69 /* NewsTableViewCell.swift */; };
@@ -27,7 +32,6 @@
 		D95549EC27F7AECF005F12EB /* CivicaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95549EB27F7AECF005F12EB /* CivicaTests.swift */; };
 		D95549F627F7AECF005F12EB /* CivicaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95549F527F7AECF005F12EB /* CivicaUITests.swift */; };
 		D95549F827F7AECF005F12EB /* CivicaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95549F727F7AECF005F12EB /* CivicaUITestsLaunchTests.swift */; };
-		D9554A0527F7C143005F12EB /* RepresentativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9554A0427F7C143005F12EB /* RepresentativeViewController.swift */; };
 		D9554A0727F7C192005F12EB /* RepInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9554A0627F7C192005F12EB /* RepInfoTableViewCell.swift */; };
 		D9C4DC222807C0C100B72275 /* myKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C4DC212807C0C100B72275 /* myKey.swift */; };
 		D9C4DC242807C1E700B72275 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C4DC232807C1E700B72275 /* LoginViewController.swift */; };
@@ -58,6 +62,11 @@
 		4C6536B4A18ABBF0CCD19877 /* Pods_Civica.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Civica.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74AA5AEE63134E3086921872 /* Pods-Civica-CivicaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Civica-CivicaUITests.release.xcconfig"; path = "Target Support Files/Pods-Civica-CivicaUITests/Pods-Civica-CivicaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7EA6CE65DAF6EB91679FE7EC /* Pods-CivicaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CivicaTests.release.xcconfig"; path = "Target Support Files/Pods-CivicaTests/Pods-CivicaTests.release.xcconfig"; sourceTree = "<group>"; };
+		A802BFF1280499CC000F7C90 /* RepService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepService.swift; sourceTree = "<group>"; };
+		A802BFF328049A52000F7C90 /* Representative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Representative.swift; sourceTree = "<group>"; };
+		A818517E280B93B900D81B5F /* RepresentativesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativesTableViewController.swift; sourceTree = "<group>"; };
+		A8819037280CF73D00A218B8 /* RepResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepResponse.swift; sourceTree = "<group>"; };
+		A8D1D07A2812295300495505 /* RepresentativesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativesViewController.swift; sourceTree = "<group>"; };
 		BC21134F4356DD4FD7CE86E7 /* Pods-Civica.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Civica.debug.xcconfig"; path = "Target Support Files/Pods-Civica/Pods-Civica.debug.xcconfig"; sourceTree = "<group>"; };
 		D58D23C427FDC7B30059CB69 /* LocalNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNewsViewController.swift; sourceTree = "<group>"; };
 		D58D23C627FDCF620059CB69 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -80,7 +89,6 @@
 		D95549F127F7AECF005F12EB /* CivicaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CivicaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D95549F527F7AECF005F12EB /* CivicaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicaUITests.swift; sourceTree = "<group>"; };
 		D95549F727F7AECF005F12EB /* CivicaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivicaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D9554A0427F7C143005F12EB /* RepresentativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepresentativeViewController.swift; sourceTree = "<group>"; };
 		D9554A0627F7C192005F12EB /* RepInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepInfoTableViewCell.swift; sourceTree = "<group>"; };
 		D9C4DC212807C0C100B72275 /* myKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myKey.swift; sourceTree = "<group>"; };
 		D9C4DC232807C1E700B72275 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -175,13 +183,17 @@
 				D95549DD27F7AECF005F12EB /* Assets.xcassets */,
 				D95549DF27F7AECF005F12EB /* LaunchScreen.storyboard */,
 				D95549E227F7AECF005F12EB /* Info.plist */,
-				D9554A0427F7C143005F12EB /* RepresentativeViewController.swift */,
 				D9554A0627F7C192005F12EB /* RepInfoTableViewCell.swift */,
 				D58D23C427FDC7B30059CB69 /* LocalNewsViewController.swift */,
 				D58D23C627FDCF620059CB69 /* NewsTableViewCell.swift */,
 				D933D3BD27F93504000AF78B /* RepDetailViewController.swift */,
 				D933D3BF27F93F21000AF78B /* RepDetailNewsTableViewCell.swift */,
 				D9C9980A27FE38A70035894A /* RepDetailTweetTableViewCell.swift */,
+				A802BFF1280499CC000F7C90 /* RepService.swift */,
+				A802BFF328049A52000F7C90 /* Representative.swift */,
+				A818517E280B93B900D81B5F /* RepresentativesTableViewController.swift */,
+				A8819037280CF73D00A218B8 /* RepResponse.swift */,
+				A8D1D07A2812295300495505 /* RepresentativesViewController.swift */,
 				D9C4DC212807C0C100B72275 /* myKey.swift */,
 				D9C4DC232807C1E700B72275 /* LoginViewController.swift */,
 				D9C4DC252807C93500B72275 /* CreateEventViewController.swift */,
@@ -452,11 +464,15 @@
 				D90AB6842810B64E0094C939 /* EventDetailTableViewCell.swift in Sources */,
 				D9C4DC222807C0C100B72275 /* myKey.swift in Sources */,
 				D95549D927F7AECC005F12EB /* ViewController.swift in Sources */,
+				A8819038280CF73E00A218B8 /* RepResponse.swift in Sources */,
 				D58D23C727FDCF620059CB69 /* NewsTableViewCell.swift in Sources */,
-				D9554A0527F7C143005F12EB /* RepresentativeViewController.swift in Sources */,
+				A8D1D07B2812295300495505 /* RepresentativesViewController.swift in Sources */,
+				A802BFF2280499CC000F7C90 /* RepService.swift in Sources */,
 				D95549D527F7AECC005F12EB /* AppDelegate.swift in Sources */,
+				A818517F280B93B900D81B5F /* RepresentativesTableViewController.swift in Sources */,
 				D95549D727F7AECC005F12EB /* SceneDelegate.swift in Sources */,
 				D9554A0727F7C192005F12EB /* RepInfoTableViewCell.swift in Sources */,
+				A802BFF428049A52000F7C90 /* Representative.swift in Sources */,
 				D58D23C527FDC7B30059CB69 /* LocalNewsViewController.swift in Sources */,
 				D9C9980B27FE38A70035894A /* RepDetailTweetTableViewCell.swift in Sources */,
 				D90AB6822810B6380094C939 /* EventListViewController.swift in Sources */,

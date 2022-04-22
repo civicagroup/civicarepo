@@ -6,12 +6,25 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class RepresentativeViewController: UIViewController {
-
+   
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
+        }
+        
+        func configure() {
+            RepService.shared.fetchReps() { [weak self]
+                detail in
+                self?.nameLabel.text = detail?.name
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -26,4 +39,4 @@ class RepresentativeViewController: UIViewController {
     }
     */
 
-}
+
