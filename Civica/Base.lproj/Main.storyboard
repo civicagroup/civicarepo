@@ -514,9 +514,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="h8X-8z-dLc" kind="relationship" relationship="viewControllers" id="9M0-h9-1A7"/>
-                        <segue destination="yTF-B0-4Qy" kind="relationship" relationship="viewControllers" id="xTv-q6-ceM"/>
                         <segue destination="hty-ex-MmN" kind="relationship" relationship="viewControllers" id="kZX-w1-9Df"/>
+                        <segue destination="h8X-8z-dLc" kind="relationship" relationship="viewControllers" id="EIF-fC-viK"/>
+                        <segue destination="yTF-B0-4Qy" kind="relationship" relationship="viewControllers" id="LFV-Gy-eau"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXz-B1-ALC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
