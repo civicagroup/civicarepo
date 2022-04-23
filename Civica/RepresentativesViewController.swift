@@ -13,6 +13,7 @@ class RepresentativesViewController: UIViewController, UITableViewDataSource, UI
     var positions : [Int: String] = [:]
     var officesArray = [[String: Any]]()
     var rawAddress: String?
+    var wikiParam: String = ""
     @IBOutlet weak var repTableView: UITableView!
     
     override func viewDidLoad() {
@@ -21,7 +22,6 @@ class RepresentativesViewController: UIViewController, UITableViewDataSource, UI
         // Do any additional setup after loading the view.
         repTableView.dataSource = self
         repTableView.delegate = self
-        
         fetchReps()
     }
     
@@ -41,6 +41,99 @@ class RepresentativesViewController: UIViewController, UITableViewDataSource, UI
             let state = addressObject["state"] as! String
             let zip = addressObject["zip"] as! String
             cell.addressLabel.text = "\(addressLine1), \(city), \(state), \(zip)"
+            
+            
+            let photoUrlStr = currentRep["photoUrl"] as? String
+            print("\(name), rep photo url \(photoUrlStr as? String ?? "NA")")
+            
+            if photoUrlStr != nil, let photoImageUrl = URL(string: (photoUrlStr!)) {
+                cell.repImage.af.setImage(withURL: photoImageUrl)
+            }
+            
+            // some hard coded images - replace this with wikipedia api
+            
+            if name == "Joseph R. Biden" {
+                let photoImageUrl = URL(string: ("https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Joe_Biden_presidential_portrait.jpg/960px-Joe_Biden_presidential_portrait.jpg"))
+                cell.repImage.af.setImage(withURL: photoImageUrl!)
+            } else if name == "Kamala D. Harris" {
+            
+                let photoImageUrl = URL(string: ("https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Kamala_Harris_Vice_Presidential_Portrait.jpg/1280px-Kamala_Harris_Vice_Presidential_Portrait.jpg"))
+                cell.repImage.af.setImage(withURL: photoImageUrl!)
+            } else if name == "Ron DeSantis" {
+                
+                let photoImageUrl = URL(string: ("https://upload.wikimedia.org/wikipedia/commons/b/b3/Ron_DeSantis_2020_%28cropped%29.jpg"))
+                cell.repImage.af.setImage(withURL: photoImageUrl!)
+            } else if name == "Carlos A. Gimenez" {
+                
+                let photoImageUrl = URL(string: ("https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Rep._Carlos_Gimenez_official_photo%2C_117th_Congress.jpg/1280px-Rep._Carlos_Gimenez_official_photo%2C_117th_Congress.jpg"))
+                cell.repImage.af.setImage(withURL: photoImageUrl!)
+            } else if name == "Harvey Ruvin" {
+                
+                let photoImageUrl = URL(string: ("https://s3.amazonaws.com/ballotpedia-api4/files/thumbs/200/300/HarveyRuvin.jpg"))
+                cell.repImage.af.setImage(withURL: photoImageUrl!)
+            }else if name == "Pedro J. Garcia" {
+                
+                let photoImageUrl = URL(string: ("https://www.miamidade.gov/pa/images/pedro-garcia.jpg"))
+                cell.repImage.af.setImage(withURL: photoImageUrl!)
+            }else if name == "Daniella Levine Cava" {
+                
+                let photoImageUrl = URL(string: ("https://www.miamidade.gov/resources/images/mayor/mayor-cava-headshot-high-res.jpg"))
+                cell.repImage.af.setImage(withURL: photoImageUrl!)
+            } else if name == "Ricky Polston" {
+                
+                let photoImageUrl = URL(string: ("https://upload.wikimedia.org/wikipedia/commons/d/d1/Florida-Supreme-Court-Justice-Ricky-Polston-2019.jpg"))
+                cell.repImage.af.setImage(withURL: photoImageUrl!)
+            }else if name == "Jorge Labarga" {
+                
+                let photoImageUrl = URL(string: ("https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Florida-Supreme-Court-Justice-Jorge-Labarga-2019.jpg/1200px-Florida-Supreme-Court-Justice-Jorge-Labarga-2019.jpg"))
+                cell.repImage.af.setImage(withURL: photoImageUrl!)
+            }else if name == "John D. Couriel" {
+                
+                let photoImageUrl = URL(string: ("https://upload.wikimedia.org/wikipedia/commons/3/3a/John_D._Couriel_%28cropped%29.jpg"))
+                cell.repImage.af.setImage(withURL: photoImageUrl!)
+            }else if name == "Jamie R. Grosshans" {
+                
+                let photoImageUrl = URL(string: ("https://upload.wikimedia.org/wikipedia/commons/e/ef/Jamie_R._Grosshans_%28cropped%29.jpg"))
+                cell.repImage.af.setImage(withURL: photoImageUrl!)
+            }else if name == "Charles T. Canady" {
+                
+                let photoImageUrl = URL(string: ("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0RIg57WMSdOQNlTrLP7nXQDuuuSs-4UHEbyabBCyZpsbj9hrDxFEK7NkRk7bS6-tl2bo&usqp=CAU"))
+                cell.repImage.af.setImage(withURL: photoImageUrl!)
+            }else if name == "Jeanette Nuñez" {
+                
+                let photoImageUrl = URL(string: ("https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Jeanette_Nunez_official_photo.jpg/1200px-Jeanette_Nunez_official_photo.jpg"))
+                cell.repImage.af.setImage(withURL: photoImageUrl!)
+            }
+            
+            
+            
+            
+                
+            
+//            var rawWikiParam = name
+//            
+//            if rawWikiParam == "Joseph R. Biden" {
+//                rawWikiParam = "Joe_Biden"
+//            } else {
+//                
+//            }
+//            wikiParam = rawWikiParam.replacingOccurrences(of: " ", with: "%20")
+//            
+//            let url = URL(string: "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&piprop=original&titles=\(wikiParam)")!
+//    
+//            let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+//            let session = URLSession(configuration: .default, delegate: nil, delegateQueue: .main)
+//            let task = session.dataTask(with: request) { [self] (data, response, error) in
+//                if let error = error {
+//                    print(error.localizedDescription)
+//                } else if let data = data {
+//                    print("PRINTING FROM WIKI CALL:")
+//                    print(name)
+//                    print(wikiParam)
+//                    print(data)
+//                }
+//            
+//        }
         }
         
         let party = currentRep["party"] as! String
@@ -49,9 +142,11 @@ class RepresentativesViewController: UIViewController, UITableViewDataSource, UI
         cell.nameLabel.text = name
         cell.partyLabel.text = party
         cell.officeLabel.text = office
+      
 
         return cell
     }
+    
     @IBAction func onBack(_ sender: Any) {
         let main = UIStoryboard(name: "Main", bundle: nil)
         let addresVC = main.instantiateViewController(identifier: "AddressViewController")
@@ -59,6 +154,7 @@ class RepresentativesViewController: UIViewController, UITableViewDataSource, UI
               let delegate = windowScene.delegate as? SceneDelegate else { return }
         delegate.window?.rootViewController = addresVC
     }
+    
     
     func fetchReps() {
         let CIVIC_API_KEY = "AIzaSyCC2MxPRX7kj6Mg6e7eaYaHGMKZWkNb8Jg"

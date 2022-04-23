@@ -531,11 +531,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="403" height="280"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ntt-GH-yQb">
-                                                    <rect key="frame" x="8" y="8" width="129" height="264"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-1577909_960_720" translatesAutoresizingMaskIntoConstraints="NO" id="ntt-GH-yQb">
+                                                    <rect key="frame" x="8" y="8" width="129" height="172"/>
                                                     <color key="backgroundColor" name="AccentColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="128" id="mNo-VL-Mr8"/>
+                                                        <constraint firstAttribute="height" constant="150" id="DMR-Kj-ojx"/>
                                                         <constraint firstAttribute="width" constant="129" id="wil-rv-TUS"/>
                                                     </constraints>
                                                 </imageView>
@@ -568,7 +568,7 @@
                                                 <constraint firstItem="N0m-YU-Ayh" firstAttribute="top" secondItem="85B-Wl-xni" secondAttribute="bottom" constant="8" id="0JJ-Vt-vWW"/>
                                                 <constraint firstItem="85B-Wl-xni" firstAttribute="top" secondItem="lT0-Zl-PT7" secondAttribute="bottom" constant="8" id="0sw-TW-Dis"/>
                                                 <constraint firstItem="ntt-GH-yQb" firstAttribute="top" secondItem="lVu-zC-Es0" secondAttribute="top" constant="8" id="4wm-3y-fOP"/>
-                                                <constraint firstAttribute="bottom" secondItem="ntt-GH-yQb" secondAttribute="bottom" constant="8" id="7Oq-lf-PGc"/>
+                                                <constraint firstAttribute="bottom" secondItem="ntt-GH-yQb" secondAttribute="bottom" constant="100" id="8kB-XY-Axn"/>
                                                 <constraint firstItem="N0m-YU-Ayh" firstAttribute="leading" secondItem="ntt-GH-yQb" secondAttribute="trailing" constant="8" id="Ecs-f8-IuK"/>
                                                 <constraint firstItem="85B-Wl-xni" firstAttribute="leading" secondItem="ntt-GH-yQb" secondAttribute="trailing" constant="8" id="Fx8-k1-pvR"/>
                                                 <constraint firstAttribute="trailing" secondItem="N0m-YU-Ayh" secondAttribute="trailing" constant="8" id="KWM-O7-1eO"/>
@@ -616,7 +616,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcg-Ba-4d3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1386" y="-668"/>
+            <point key="canvasLocation" x="1384.6153846153845" y="-668.24644549763025"/>
         </scene>
         <!--RepDetailViewController-->
         <scene sceneID="Pnt-QO-4BV">
