@@ -193,4 +193,4 @@ Here's a walkthrough of implemented user stories:
 
 <img src='./localNews.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
-<img src=https://media2.giphy.com/media/cS93j8FQDZ3b6q2CgN/giphy.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+<img src='https://media2.giphy.com/media/cS93j8FQDZ3b6q2CgN/giphy.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
