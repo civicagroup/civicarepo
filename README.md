@@ -31,7 +31,7 @@ The **Project Board** can be located [here](https://github.com/orgs/civicagroup/
 
 **Required Must-have Stories**
 
-- [ ] User can see list of their representatives when they input their address
+- [x] User can see list of their representatives when they input their address
 - [x] User can click on a representative's name to see more about them
 - [x] User can see if there are any news about a representative 
 - [x] user can see local municipal news if no news about representative is available
@@ -192,3 +192,5 @@ Here's a walkthrough of implemented user stories:
 Here's a walkthrough of implemented user stories:
 
 <img src='./localNews.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
+
+<img src=https://media2.giphy.com/media/cS93j8FQDZ3b6q2CgN/giphy.gif?cid=790b76111adde5895dd1cd4ddccacd11c26b3a9e611072f4&rid=giphy.gif&ct=gtitle='Video Walkthrough' width='250' alt='Video Walkthrough' />
