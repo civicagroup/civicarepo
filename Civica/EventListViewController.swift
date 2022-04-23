@@ -12,9 +12,12 @@ import AlamofireImage
 class EventListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    var events = [PFObject]()
-    var eventCount: Int!
+    @IBOutlet weak var profileButton: UIBarButtonItem!
+    
     let incrementLoad = 10
+    var events = [PFObject]()
+    var eventCount = 20
+    let myRefreshControl = UIRefreshControl()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
@@ -46,33 +49,59 @@ class EventListViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
 
+
     @objc func queryParse(postCount: Int) -> Void {
         let query = PFQuery(className: "Event")
         query.includeKeys(["Author", "StartTime", "Description", "Image", "EventName", "Address", "Zipcode"])
         query.limit = eventCount
-        query.order(byDescending: "StartTime")
+        query.order(byAscending: "StartTime")
         query.findObjectsInBackground { (events, error) in
             if events != nil {
                 print("Retrieving...")
                 self.events = events!
                 self.tableView.reloadData()
-                print(events!)
-//                self.myRefreshControl.endRefreshing()
+                self.myRefreshControl.endRefreshing()
             } else {
                 print(error?.localizedDescription)
             }
         }
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        eventCount = incrementLoad
         queryParse(postCount: eventCount)
         tableView.delegate = self
         tableView.dataSource = self
+        
+        if PFUser.current() != nil {
+            profileButton.title = "Logout"
+        } else {
+            profileButton.title = "Login"
+        }
+        
+        myRefreshControl.addTarget(self, action: #selector(queryParse), for: .valueChanged)
+        tableView.insertSubview(myRefreshControl, at: 0)
 
-        // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        queryParse(postCount: eventCount)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        if PFUser.current() != nil {
+            profileButton.title = "Logout"
+        } else {
+            profileButton.title = "Login"
+        }
+    }
+    
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        if indexPath.row + 1 == events.count {
+//            print("load more events")
+//            eventCount = eventCount + incrementLoad
+//            queryParse(postCount: eventCount)
+//        }
+//    }
     
     @IBAction func onCreateEvent(_ sender: Any) {
         //        print(PFUser.current())
@@ -83,9 +112,15 @@ class EventListViewController: UIViewController, UITableViewDataSource, UITableV
                 }
     }
     
+    // this button changes function based on whether has already logged in
     @IBAction func onLogout(_ sender: Any) {
-        PFUser.logOut()
-        displayAlert(withTitle: "Success", message: "You have logged out.")
+        if PFUser.current() != nil {
+            PFUser.logOut()
+            displayAlert(withTitle: "Success", message: "You have logged out.")
+            profileButton.title = "Login"
+        } else {
+            performSegue(withIdentifier: "toLoginPage", sender: self)
+        }
 //        let main = UIStoryboard(name: "Main", bundle: nil)
 //        let loginViewController = main.instantiateViewController(identifier: "LoginViewController")
 //        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,

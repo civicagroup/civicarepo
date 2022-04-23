@@ -17,9 +17,8 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsername(inBackground: usernameField.text!, password: passwordField.text!) { (user: PFUser?, error: Error?) in
             if user != nil {
 //                self.displayAlert(withTitle: "Login Successful", message: "")
-                self.performSegue(withIdentifier: "LoginToCreateEventSegue", sender: self)
-//                self.dismiss(animated: true)
-//                _ = self.navigationController?.popToRootViewController(animated: true)
+//                self.performSegue(withIdentifier: "LoginToCreateEventSegue", sender: self)
+                _ = self.navigationController?.popToRootViewController(animated: true)
 
             } else {
                 self.displayAlert(withTitle: "Error", message: error!.localizedDescription)

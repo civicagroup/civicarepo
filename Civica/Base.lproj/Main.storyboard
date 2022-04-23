@@ -397,7 +397,7 @@
                                 <action selector="onCreateEvent:" destination="xtb-Yo-Y96" id="Mbh-s7-WFw"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="Fso-cz-dOh">
+                        <barButtonItem key="rightBarButtonItem" title="Button" id="Fso-cz-dOh">
                             <connections>
                                 <action selector="onLogout:" destination="xtb-Yo-Y96" id="epX-kD-pUL"/>
                             </connections>
@@ -405,6 +405,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="profileButton" destination="Fso-cz-dOh" id="BvV-J1-u3F"/>
                         <outlet property="tableView" destination="LqQ-Yo-xbB" id="lci-cd-jVO"/>
                         <segue destination="zrg-DF-fab" kind="show" identifier="toCreateEvent" id="LaL-7P-Rqe"/>
                         <segue destination="ChI-no-zP3" kind="show" identifier="toLoginPage" id="YAJ-HU-mqC"/>
@@ -612,7 +613,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Representatives" id="IPV-8Y-PHh">
                         <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="27e-qg-wH5">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="lMr-gg-bdj">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="lMr-gg-bdj">
                                 <rect key="frame" x="16" y="11" width="86" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -743,12 +744,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DAp-aF-crs">
                                 <rect key="frame" x="0.0" y="29" width="390" height="732"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MZh-WI-agP">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar-1577909_960_720" translatesAutoresizingMaskIntoConstraints="NO" id="MZh-WI-agP">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="520"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <color key="backgroundColor" red="0.30151823160000002" green="0.61983019110000004" blue="0.92160397770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="MZh-WI-agP" secondAttribute="height" multiplier="6:8" id="1zV-q7-EGa"/>
+                                            <constraint firstAttribute="width" secondItem="MZh-WI-agP" secondAttribute="height" multiplier="3:4" id="1zV-q7-EGa"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Representative Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ta-h5-8Lc">
@@ -898,6 +899,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="101951325" width="400" height="400"/>
+        <image name="avatar-1577909_960_720" width="360" height="360"/>
         <image name="image_placeholder" width="375" height="375"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -907,9 +909,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

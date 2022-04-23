@@ -172,7 +172,6 @@ class CreateEventViewController: UIViewController, UITextViewDelegate, UIImagePi
             if success {
                 print("Event saved!")
 //                self.displayAlert(withTitle: "Awesome", message: "Your event is created.")
-//                self.dismiss(animated: true)
 //                let main = UIStoryboard(name: "Main", bundle: nil)
 //                let eventListViewController = main.instantiateViewController(identifier: "EventListViewController")
 //                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
