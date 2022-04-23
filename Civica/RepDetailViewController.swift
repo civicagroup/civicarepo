@@ -7,6 +7,7 @@
 
 import UIKit
 import AlamofireImage
+import SafariServices
 
 class RepDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -86,6 +87,26 @@ class RepDetailViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableView == newsTableView ? newsArray.count: tweetArray.count
 //        return tableView == newsTableView ? newsArray.count: max(tweetArray.count,1)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentNews = newsArray[indexPath.row]
+        let url = currentNews["url"] as! String ?? ""
+        if url == "" {
+            return
+        }
+        showNews(url: url)
+        newsTableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func showNews(url: String) {
+        if let url = URL(string: "\(url)") {
+                let config = SFSafariViewController.Configuration()
+                config.entersReaderIfAvailable = false
+
+                let vc = SFSafariViewController(url: url, configuration: config)
+                present(vc, animated: true)
+            }
     }
 
     @objc func loadTweets(){
