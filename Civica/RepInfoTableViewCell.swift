@@ -31,5 +31,12 @@ class RepInfoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        repImage.af.cancelImageRequest()
+        repImage.image = nil
+     }
 
 }

@@ -16,13 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="101951325" translatesAutoresizingMaskIntoConstraints="NO" id="42M-CZ-nLj">
-                                <rect key="frame" x="87" y="241" width="240" height="243"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="101951325" translatesAutoresizingMaskIntoConstraints="NO" id="42M-CZ-nLj">
+                                <rect key="frame" x="7" y="164" width="400" height="400"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xh7-yv-7YU">
-                                <rect key="frame" x="108" y="463" width="198" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xh7-yv-7YU">
+                                <rect key="frame" x="108" y="484" width="198" height="80"/>
                                 <color key="tintColor" red="0.12790740440000001" green="0.23452336679999999" blue="0.57711577960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment content="CIVICA">
@@ -36,6 +34,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="42M-CZ-nLj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="46E-UE-z56"/>
+                            <constraint firstItem="xh7-yv-7YU" firstAttribute="top" secondItem="42M-CZ-nLj" secondAttribute="bottom" constant="-80" id="mln-Bg-yXw"/>
+                            <constraint firstItem="xh7-yv-7YU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ou0-nI-83A"/>
+                            <constraint firstItem="42M-CZ-nLj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qQz-3Y-fF5"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

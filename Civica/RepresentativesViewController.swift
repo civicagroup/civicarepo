@@ -44,8 +44,8 @@ class RepresentativesViewController: UIViewController, UITableViewDataSource, UI
             
             
             let photoUrlStr = currentRep["photoUrl"] as? String
-            print("\(name), rep photo url \(photoUrlStr as? String ?? "NA")")
-            
+//            print("\(name), rep photo url \(photoUrlStr as? String ?? "NA")")
+                        
             if photoUrlStr != nil, let photoImageUrl = URL(string: (photoUrlStr!)) {
                 cell.repImage.af.setImage(withURL: photoImageUrl)
             }
@@ -146,6 +146,8 @@ class RepresentativesViewController: UIViewController, UITableViewDataSource, UI
 
         return cell
     }
+    
+
     
     @IBAction func onBack(_ sender: Any) {
         let main = UIStoryboard(name: "Main", bundle: nil)

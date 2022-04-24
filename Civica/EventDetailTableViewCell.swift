@@ -27,4 +27,10 @@ class EventDetailTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        eventImage.af.cancelImageRequest()
+        eventImage.image = nil
+     }
 }
